@@ -28,7 +28,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
     {
         $physicalDescriptions = $this->bookReader->getPhysicalDescriptions();
         self::assertNotEmpty($physicalDescriptions);
-        self::assertEquals(1, count($physicalDescriptions));
+        self::assertCount(1, $physicalDescriptions);
         self::assertPhysicalDescriptionForBookDocument($physicalDescriptions[0]);
     }
 
@@ -77,7 +77,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
     {
         $physicalDescriptions = $this->bookReader->getPhysicalDescriptions('[./mods:form[@authority="marcform"]="print"]');
         self::assertNotEmpty($physicalDescriptions);
-        self::assertEquals(1, count($physicalDescriptions));
+        self::assertCount(1, $physicalDescriptions);
         self::assertPhysicalDescriptionForBookDocument($physicalDescriptions[0]);
     }
 
@@ -124,7 +124,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
     {
         $physicalDescriptions = $this->serialReader->getPhysicalDescriptions();
         self::assertNotEmpty($physicalDescriptions);
-        self::assertEquals(1, count($physicalDescriptions));
+        self::assertCount(1, $physicalDescriptions);
         self::assertPhysicalDescriptionForSerialDocument($physicalDescriptions[0]);
     }
 
@@ -135,7 +135,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
     {
         $physicalDescriptions = $this->serialReader->getPhysicalDescriptions('[./mods:form[@authority="marcform"]="electronic"]');
         self::assertNotEmpty($physicalDescriptions);
-        self::assertEquals(1, count($physicalDescriptions));
+        self::assertCount(1, $physicalDescriptions);
         self::assertPhysicalDescriptionForSerialDocument($physicalDescriptions[0]);
     }
 
@@ -171,7 +171,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertNotEmpty($physicalDescription->getForms());
 
         $forms = $physicalDescription->getForms();
-        self::assertEquals(2, count($forms));
+        self::assertCount(2, $forms);
         self::assertEquals('gmd', $forms[1]->getAuthority());
         self::assertEquals('electronic resource', $forms[1]->getValue());
         self::assertNotEmpty($physicalDescription->getInternetMediaTypes());

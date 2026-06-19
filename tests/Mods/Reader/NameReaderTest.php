@@ -28,7 +28,7 @@ class NameReaderTest extends ModsReaderTest
     {
         $names = $this->bookReader->getNames();
         self::assertNotEmpty($names);
-        self::assertEquals(2, count($names));
+        self::assertCount(2, $names);
         self::assertFirstNameForBookDocument($names[0]);
     }
 
@@ -66,7 +66,7 @@ class NameReaderTest extends ModsReaderTest
     {
         $names = $this->bookReader->getNames('[@type="personal" and not(@usage="primary")]');
         self::assertNotEmpty($names);
-        self::assertEquals(1, count($names));
+        self::assertCount(1, $names);
         self::assertSecondNameForBookDocument($names[0]);
     }
 
@@ -140,7 +140,7 @@ class NameReaderTest extends ModsReaderTest
     {
         $names = $this->serialReader->getNames();
         self::assertNotEmpty($names);
-        self::assertEquals(1, count($names));
+        self::assertCount(1, $names);
         self::assertNameForSerialDocument($names[0]);
     }
 
@@ -151,7 +151,7 @@ class NameReaderTest extends ModsReaderTest
     {
         $names = $this->serialReader->getNames('[@type="corporate"]');
         self::assertNotEmpty($names);
-        self::assertEquals(1, count($names));
+        self::assertCount(1, $names);
         self::assertNameForSerialDocument($names[0]);
     }
 
@@ -194,8 +194,8 @@ class NameReaderTest extends ModsReaderTest
         self::assertNotEmpty($name->getValue());
 
         $nameParts = $name->getNameParts();
-        self::assertNotEmpty($name->getNameParts());
-        self::assertEquals(2, count($nameParts));
+        self::assertNotEmpty($nameParts);
+        self::assertCount(2, $nameParts);
         self::assertEquals('given', $nameParts[0]->getType());
         self::assertEquals('Aron', $nameParts[0]->getValue());
 
@@ -214,8 +214,8 @@ class NameReaderTest extends ModsReaderTest
         self::assertNotEmpty($name->getValue());
 
         $nameParts = $name->getNameParts();
-        self::assertNotEmpty($name->getNameParts());
-        self::assertEquals(1, count($nameParts));
+        self::assertNotEmpty($nameParts);
+        self::assertCount(1, $nameParts);
         self::assertEquals('International Consortium for the Advancement of Academic Publication.', $nameParts[0]->getValue());
     }
 }

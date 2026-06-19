@@ -28,7 +28,7 @@ class ClassificationReaderTest extends ModsReaderTest
     {
         $classifications = $this->bookReader->getClassifications();
         self::assertNotEmpty($classifications);
-        self::assertEquals(2, count($classifications));
+        self::assertCount(2, $classifications);
         self::assertFirstClassificationForBookDocument($classifications[0]);
     }
 
@@ -66,7 +66,7 @@ class ClassificationReaderTest extends ModsReaderTest
     {
         $classifications = $this->bookReader->getClassifications('[@authority="ddc"]');
         self::assertNotEmpty($classifications);
-        self::assertEquals(1, count($classifications));
+        self::assertCount(1, $classifications);
         self::assertSecondClassificationForBookDocument($classifications[0]);
     }
 
@@ -116,7 +116,7 @@ class ClassificationReaderTest extends ModsReaderTest
     {
         $classifications = $this->serialReader->getClassifications();
         self::assertNotEmpty($classifications);
-        self::assertEquals(1, count($classifications));
+        self::assertCount(1, $classifications);
         self::assertClassificationForSerialDocument($classifications[0]);
     }
 
@@ -127,7 +127,7 @@ class ClassificationReaderTest extends ModsReaderTest
     {
         $classifications = $this->serialReader->getClassifications('[@authority="ddc"]');
         self::assertNotEmpty($classifications);
-        self::assertEquals(1, count($classifications));
+        self::assertCount(1, $classifications);
         self::assertClassificationForSerialDocument($classifications[0]);
     }
 

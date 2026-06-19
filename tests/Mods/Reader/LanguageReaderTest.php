@@ -28,7 +28,7 @@ class LanguageReaderTest extends ModsReaderTest
     {
         $languages = $this->bookReader->getLanguages();
         self::assertNotEmpty($languages);
-        self::assertEquals(2, count($languages));
+        self::assertCount(2, $languages);
         self::assertFirstLanguageForBookDocument($languages[0]);
     }
 
@@ -66,7 +66,7 @@ class LanguageReaderTest extends ModsReaderTest
     {
         $languages = $this->bookReader->getLanguages('[@objectPart="summary"]');
         self::assertNotEmpty($languages);
-        self::assertEquals(1, count($languages));
+        self::assertCount(1, $languages);
         self::assertSecondLanguageForBookDocument($languages[0]);
     }
 
@@ -140,7 +140,7 @@ class LanguageReaderTest extends ModsReaderTest
     {
         $languages = $this->serialReader->getLanguages();
         self::assertNotEmpty($languages);
-        self::assertEquals(1, count($languages));
+        self::assertCount(1, $languages);
         self::assertLanguageForSerialDocument($languages[0]);
     }
 
@@ -151,7 +151,7 @@ class LanguageReaderTest extends ModsReaderTest
     {
         $languages = $this->serialReader->getLanguages('[./mods:languageTerm[@type="code"]]');
         self::assertNotEmpty($languages);
-        self::assertEquals(1, count($languages));
+        self::assertCount(1, $languages);
         self::assertLanguageForSerialDocument($languages[0]);
     }
 

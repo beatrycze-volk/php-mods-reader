@@ -28,7 +28,7 @@ class TableOfContentsReaderTest extends ModsReaderTest
     {
         $tablesOfContents = $this->bookReader->getTablesOfContents();
         self::assertNotEmpty($tablesOfContents);
-        self::assertEquals(1, count($tablesOfContents));
+        self::assertCount(1, $tablesOfContents);
         self::assertTableOfContentsForBookDocument($tablesOfContents[0]);
     }
 
@@ -66,7 +66,7 @@ class TableOfContentsReaderTest extends ModsReaderTest
     {
         $tablesOfContents = $this->bookReader->getTablesOfContents('[@displayLabel="Chapters"]');
         self::assertNotEmpty($tablesOfContents);
-        self::assertEquals(1, count($tablesOfContents));
+        self::assertCount(1, $tablesOfContents);
         self::assertTableOfContentsForBookDocument($tablesOfContents[0]);
     }
 

@@ -28,7 +28,7 @@ class AccessConditionReaderTest extends ModsReaderTest
     {
         $accessConditions = $this->bookReader->getAccessConditions();
         self::assertNotEmpty($accessConditions);
-        self::assertEquals(1, count($accessConditions));
+        self::assertCount(1, $accessConditions);
         self::assertAccessConditionForBookDocument($accessConditions[0]);
     }
 
@@ -66,7 +66,7 @@ class AccessConditionReaderTest extends ModsReaderTest
     {
         $accessConditions = $this->bookReader->getAccessConditions('[@type="use and reproduction"]');
         self::assertNotEmpty($accessConditions);
-        self::assertEquals(1, count($accessConditions));
+        self::assertCount(1, $accessConditions);
         self::assertAccessConditionForBookDocument($accessConditions[0]);
     }
 
@@ -131,7 +131,7 @@ class AccessConditionReaderTest extends ModsReaderTest
     {
         $accessConditions = $this->serialReader->getAccessConditions();
         self::assertNotEmpty($accessConditions);
-        self::assertEquals(1, count($accessConditions));
+        self::assertCount(1, $accessConditions);
         self::assertAccessConditionForSerialDocument($accessConditions[0]);
     }
 
@@ -142,7 +142,7 @@ class AccessConditionReaderTest extends ModsReaderTest
     {
         $accessConditions = $this->serialReader->getAccessConditions('[@type="restriction on access"]');
         self::assertNotEmpty($accessConditions);
-        self::assertEquals(1, count($accessConditions));
+        self::assertCount(1, $accessConditions);
         self::assertAccessConditionForSerialDocument($accessConditions[0]);
     }
 

@@ -28,7 +28,7 @@ class PartReaderTest extends ModsReaderTest
     {
         $parts = $this->bookReader->getParts();
         self::assertNotEmpty($parts);
-        self::assertEquals(2, count($parts));
+        self::assertCount(2, $parts);
         self::assertFirstPartForBookDocument($parts[0]);
     }
 
@@ -66,7 +66,7 @@ class PartReaderTest extends ModsReaderTest
     {
         $parts = $this->bookReader->getParts('[@order="2"]');
         self::assertNotEmpty($parts);
-        self::assertEquals(1, count($parts));
+        self::assertCount(1, $parts);
         self::assertSecondPartForBookDocument($parts[0]);
     }
 
@@ -156,7 +156,7 @@ class PartReaderTest extends ModsReaderTest
 
         $details = $part->getDetails();
         self::assertNotEmpty($details);
-        self::assertEquals(2, count($details));
+        self::assertCount(2, $details);
         self::assertEquals('begin', $details[0]->getType());
         self::assertEquals(1, $details[0]->getLevel());
         self::assertNotEmpty($details[0]->getTitles());

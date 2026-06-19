@@ -28,7 +28,7 @@ class NoteReaderTest extends ModsReaderTest
     {
         $notes = $this->bookReader->getNotes();
         self::assertNotEmpty($notes);
-        self::assertEquals(2, count($notes));
+        self::assertCount(2, $notes);
         self::assertFirstNoteForBookDocument($notes[0]);
     }
 
@@ -66,7 +66,7 @@ class NoteReaderTest extends ModsReaderTest
     {
         $notes = $this->bookReader->getNotes('[@type="bibliography"]');
         self::assertNotEmpty($notes);
-        self::assertEquals(1, count($notes));
+        self::assertCount(1, $notes);
         self::assertSecondNoteForBookDocument($notes[0]);
     }
 
@@ -140,7 +140,7 @@ class NoteReaderTest extends ModsReaderTest
     {
         $notes = $this->serialReader->getNotes();
         self::assertNotEmpty($notes);
-        self::assertEquals(6, count($notes));
+        self::assertCount(6, $notes);
         self::assertFirstNoteForSerialDocument($notes[0]);
     }
 
@@ -178,7 +178,7 @@ class NoteReaderTest extends ModsReaderTest
     {
         $notes = $this->serialReader->getNotes('[@type="system details"]');
         self::assertNotEmpty($notes);
-        self::assertEquals(1, count($notes));
+        self::assertCount(1, $notes);
         self::assertFifthNoteForSerialDocument($notes[0]);
     }
 

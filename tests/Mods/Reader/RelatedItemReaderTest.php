@@ -64,7 +64,7 @@ class RelatedItemReaderTest extends ModsReaderTest
     {
         $relatedItems = $this->serialReader->getRelatedItems();
         self::assertNotEmpty($relatedItems);
-        self::assertEquals(1, count($relatedItems));
+        self::assertCount(1, $relatedItems);
         self::assertRelatedItemForSerialDocument($relatedItems[0]);
     }
 
@@ -102,7 +102,7 @@ class RelatedItemReaderTest extends ModsReaderTest
     {
         $relatedItems = $this->serialReader->getRelatedItems('[./mods:identifier="1525-321X"]');
         self::assertNotEmpty($relatedItems);
-        self::assertEquals(1, count($relatedItems));
+        self::assertCount(1, $relatedItems);
         self::assertRelatedItemForSerialDocument($relatedItems[0]);
     }
 
@@ -125,12 +125,12 @@ class RelatedItemReaderTest extends ModsReaderTest
         // TODO: implement back compatibility for 'publisher' element
         // self::assertEquals('Journal of southern academic and special librarianship', $relatedItem->getOriginInfos()[0]->getPublisher());
         self::assertNotEmpty($relatedItem->getIdentifiers());
-        self::assertEquals(4, count($relatedItem->getIdentifiers()));
+        self::assertCount(4, $relatedItem->getIdentifiers());
         self::assertEquals('1525-321X', $relatedItem->getIdentifiers()[0]->getValue());
 
         $localIdentifiers = $relatedItem->getIdentifiers('[@type="local"]');
         self::assertNotEmpty($localIdentifiers);
-        self::assertEquals(3, count($localIdentifiers));
+        self::assertCount(3, $localIdentifiers);
         self::assertEquals('(OCoLC)41477508', $localIdentifiers[0]->getValue());
     }
 }

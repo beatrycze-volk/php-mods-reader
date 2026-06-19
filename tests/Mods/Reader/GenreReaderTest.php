@@ -28,7 +28,7 @@ class GenreReaderTest extends ModsReaderTest
     {
         $genres = $this->bookReader->getGenres();
         self::assertNotEmpty($genres);
-        self::assertEquals(1, count($genres));
+        self::assertCount(1, $genres);
         self::assertGenreForBookDocument($genres[0]);
     }
 
@@ -66,7 +66,7 @@ class GenreReaderTest extends ModsReaderTest
     {
         $genres = $this->bookReader->getGenres('[@authority="marcgt"]');
         self::assertNotEmpty($genres);
-        self::assertEquals(1, count($genres));
+        self::assertCount(1, $genres);
         self::assertGenreForBookDocument($genres[0]);
     }
 
@@ -140,7 +140,7 @@ class GenreReaderTest extends ModsReaderTest
     {
         $genres = $this->serialReader->getGenres();
         self::assertNotEmpty($genres);
-        self::assertEquals(2, count($genres));
+        self::assertCount(2, $genres);
         self::assertFirstGenreForSerialDocument($genres[0]);
     }
 
@@ -178,7 +178,7 @@ class GenreReaderTest extends ModsReaderTest
     {
         $genres = $this->serialReader->getGenres('[@usage="primary"]');
         self::assertNotEmpty($genres);
-        self::assertEquals(1, count($genres));
+        self::assertCount(1, $genres);
         self::assertFirstGenreForSerialDocument($genres[0]);
     }
 

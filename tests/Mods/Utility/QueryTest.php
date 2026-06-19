@@ -16,6 +16,9 @@ use PHPUnit\Framework\TestCase;
 class QueryTest extends TestCase
 {
 
+    /**
+     * @var mixed[]
+     */
     private static array $testData = [
         'All parameters present' => [
             'query' => 'div',

@@ -39,20 +39,15 @@ class Query
      */
     public function __construct(string $xpath, string $query = '', array $attributes = [], string $value = '')
     {
-        if (!empty($query) && !empty($attributes) && !empty($value)) {
-            $xpath .= '[' . $query . '[' . $this->getParsedAttributes($attributes) . ']="' . $value . '"]';
-        } else if (empty($query) && !empty($attributes) && !empty($value)) {
-            $xpath .= '[' . $this->getParsedAttributes($attributes) . ']="' . $value . '"';
-        } else if (empty($query) && empty($attributes) && !empty($value)) {
+        $parsedAttributes = !empty($attributes) ? $this->getParsedAttributes($attributes) : '';
+
+        if (!empty($query) && !empty($parsedAttributes)) {
+            $xpath .= !empty($value) ? '[' . $query . '[' . $parsedAttributes . ']="' . $value . '"]' : '[' . $query . '[' . $parsedAttributes . ']]';
+        } else if (!empty($query) || !empty($parsedAttributes)) {
+            $inner = !empty($query) ? $query : $parsedAttributes;
+            $xpath .= !empty($value) ? '[' . $inner . ']="' . $value . '"' : '[' . $inner . ']';
+        } else if (!empty($value)) {
             $xpath .= '="' . $value . '"';
-        } else if (empty($query) && !empty($attributes) && empty($value)) {
-            $xpath .= '[' . $this->getParsedAttributes($attributes) . ']';
-        } else if (!empty($query) && empty($attributes) && empty($value)) {
-            $xpath .= '[' . $query . ']';
-        } else if (!empty($query) && empty($attributes) && !empty($value)) {
-            $xpath .= '[' . $query . ']="' . $value . '"';
-        } else if (!empty($query) && !empty($attributes) && empty($value)) {
-            $xpath .= '[' . $query . '[' . $this->getParsedAttributes($attributes) . ']]';
         }
 
         $this->xPath = $xpath;

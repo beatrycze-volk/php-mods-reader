@@ -8,16 +8,20 @@ on:
 
 jobs:
   phpstan:
+    name: Static Code Analysis
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        variants: [{ php: 7.4 }, { php: 8.2 }, { php: 8.4 } ]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
           command: update
-          php_version: "7.4"
+          php_version: ${{ matrix.variants.php }}
 
       - name: PHPStan Static Analysis
         uses: php-actions/phpstan@v3

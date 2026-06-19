@@ -21,7 +21,7 @@ trait PartReader
 {
 
     /**
-     * Get the the array of the <part> elements.
+     * Get the array of the <part> elements.
      * @see https://www.loc.gov/standards/mods/userguide/part.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait PartReader
     }
 
     /**
-     * Get the the first matching <part> element.
+     * Get the first matching <part> element.
      * @see https://www.loc.gov/standards/mods/userguide/part.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait PartReader
     }
 
     /**
-     * Get the the last matching <part> element.
+     * Get the last matching <part> element.
      * @see https://www.loc.gov/standards/mods/userguide/part.html
      *
      * @access public

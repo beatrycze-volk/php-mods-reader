@@ -63,7 +63,7 @@ class Name extends BaseNameElement
     }
 
     /**
-     * Get the the array of the <alternativeName> elements.
+     * Get the array of the <alternativeName> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#alternativename
      *
      * @access public

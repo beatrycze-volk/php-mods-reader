@@ -40,7 +40,7 @@ class HoldingSimple extends BaseElement
     }
 
     /**
-     * Get the the array of the <copyInformation> elements.
+     * Get the array of the <copyInformation> elements.
      * @see https://www.loc.gov/standards/mods/userguide/location.html#copyinformation
      *
      * @access public

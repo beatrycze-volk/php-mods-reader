@@ -21,7 +21,7 @@ trait PhysicalDescriptionReader
 {
 
     /**
-     * Get the the array of the <physicalDescription> elements.
+     * Get the array of the <physicalDescription> elements.
      * @see https://www.loc.gov/standards/mods/userguide/physicaldescription.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait PhysicalDescriptionReader
     }
 
     /**
-     * Get the the first matching <physicalDescription> element.
+     * Get the first matching <physicalDescription> element.
      * @see https://www.loc.gov/standards/mods/userguide/physicaldescription.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait PhysicalDescriptionReader
     }
 
     /**
-     * Get the the last matching <physicalDescription> element.
+     * Get the last matching <physicalDescription> element.
      * @see https://www.loc.gov/standards/mods/userguide/physicaldescription.html
      *
      * @access public

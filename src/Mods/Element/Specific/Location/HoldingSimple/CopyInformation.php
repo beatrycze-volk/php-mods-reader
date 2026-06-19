@@ -64,7 +64,7 @@ class CopyInformation extends BaseElement
     }
 
     /**
-     * Get the the array of the <subLocation> elements.
+     * Get the array of the <subLocation> elements.
      * @see https://www.loc.gov/standards/mods/userguide/location.html#sublocation
      *
      * @access public
@@ -79,7 +79,7 @@ class CopyInformation extends BaseElement
     }
 
     /**
-     * Get the the array of the <shelfLocator> elements.
+     * Get the array of the <shelfLocator> elements.
      * @see https://www.loc.gov/standards/mods/userguide/location.html#copyshelflocator
      *
      * @access public
@@ -154,7 +154,7 @@ class CopyInformation extends BaseElement
     }
 
     /**
-     * Get the the array of the <itemIdentifier> elements.
+     * Get the array of the <itemIdentifier> elements.
      * @see https://www.loc.gov/standards/mods/userguide/location.html#itemidentifier
      *
      * @access public

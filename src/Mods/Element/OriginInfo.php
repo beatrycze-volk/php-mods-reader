@@ -150,7 +150,7 @@ class OriginInfo extends BaseElement
     }
 
     /**
-     * Get the the array of the <dateCaptured> elements.
+     * Get the array of the <dateCaptured> elements.
      * @see https://www.loc.gov/standards/mods/userguide/origininfo.html#datecaptured
      *
      * @access public

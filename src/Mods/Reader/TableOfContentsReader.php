@@ -21,7 +21,7 @@ trait TableOfContentsReader
 {
 
     /**
-     * Get the the array of the <tableOfContents> elements.
+     * Get the array of the <tableOfContents> elements.
      * @see https://www.loc.gov/standards/mods/userguide/tableofcontents.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait TableOfContentsReader
     }
 
     /**
-     * Get the the first matching <tableOfContents> element.
+     * Get the first matching <tableOfContents> element.
      * @see https://www.loc.gov/standards/mods/userguide/tableofcontents.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait TableOfContentsReader
     }
 
     /**
-     * Get the the last matching <tableOfContents> element.
+     * Get the last matching <tableOfContents> element.
      * @see https://www.loc.gov/standards/mods/userguide/tableofcontents.html
      *
      * @access public

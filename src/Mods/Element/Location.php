@@ -89,7 +89,7 @@ class Location extends BaseElement
     }
 
     /**
-     * Get the the array of the <url> elements.
+     * Get the array of the <url> elements.
      * @see https://www.loc.gov/standards/mods/userguide/location.html#url
      *
      * @access public

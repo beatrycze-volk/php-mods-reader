@@ -21,7 +21,7 @@ trait RelatedItemReader
 {
 
     /**
-     * Get the the array of the <relatedItem> elements.
+     * Get the array of the <relatedItem> elements.
      * @see https://www.loc.gov/standards/mods/userguide/relateditem.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait RelatedItemReader
     }
 
     /**
-     * Get the the first matching <relatedItem> element.
+     * Get the first matching <relatedItem> element.
      * @see https://www.loc.gov/standards/mods/userguide/relateditem.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait RelatedItemReader
     }
 
     /**
-     * Get the the last matching <relatedItem> element.
+     * Get the last matching <relatedItem> element.
      * @see https://www.loc.gov/standards/mods/userguide/relateditem.html
      *
      * @access public

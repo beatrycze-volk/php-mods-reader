@@ -40,7 +40,7 @@ class Role extends BaseElement
     }
 
     /**
-     * Get the the array of the <roleTerm> elements.
+     * Get the array of the <roleTerm> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#roleterm
      *
      * @access public

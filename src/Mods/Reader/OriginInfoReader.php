@@ -21,7 +21,7 @@ trait OriginInfoReader
 {
 
     /**
-     * Get the the array of the <originInfo> elements.
+     * Get the array of the <originInfo> elements.
      * @see https://www.loc.gov/standards/mods/userguide/origininfo.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait OriginInfoReader
     }
 
     /**
-     * Get the the first matching <originInfo> element.
+     * Get the first matching <originInfo> element.
      * @see https://www.loc.gov/standards/mods/userguide/origininfo.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait OriginInfoReader
     }
 
     /**
-     * Get the the last matching <originInfo> element.
+     * Get the last matching <originInfo> element.
      * @see https://www.loc.gov/standards/mods/userguide/origininfo.html
      *
      * @access public

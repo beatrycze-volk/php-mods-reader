@@ -21,7 +21,7 @@ trait NoteReader
 {
 
     /**
-     * Get the the array of the <note> elements.
+     * Get the array of the <note> elements.
      * @see https://www.loc.gov/standards/mods/userguide/note.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait NoteReader
     }
 
     /**
-     * Get the the first matching <note> element.
+     * Get the first matching <note> element.
      * @see https://www.loc.gov/standards/mods/userguide/note.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait NoteReader
     }
 
     /**
-     * Get the the last matching <note> element.
+     * Get the last matching <note> element.
      * @see https://www.loc.gov/standards/mods/userguide/note.html
      *
      * @access public

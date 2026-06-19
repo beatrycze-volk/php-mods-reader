@@ -52,7 +52,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <topic> elements.
+     * Get the array of the <topic> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#topic
      *
      * @access public
@@ -73,7 +73,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <geographic> elements.
+     * Get the array of the <geographic> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#geographic
      *
      * @access public
@@ -115,7 +115,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <titleInfo> elements.
+     * Get the array of the <titleInfo> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#titleinfo
      *
      * @access public
@@ -136,7 +136,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <name> elements.
+     * Get the array of the <name> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#name
      *
      * @access public
@@ -157,7 +157,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <genre> elements.
+     * Get the array of the <genre> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#genre
      *
      * @access public
@@ -178,7 +178,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <hierarchicalGeographic> elements.
+     * Get the array of the <hierarchicalGeographic> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#hierarchicalgeographic
      *
      * @access public
@@ -199,7 +199,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <cartographics> elements.
+     * Get the array of the <cartographics> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#hierarchicalgeographic
      *
      * @access public
@@ -220,7 +220,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <geographicCode> elements.
+     * Get the array of the <geographicCode> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#geographiccode
      *
      * @access public
@@ -241,7 +241,7 @@ class Subject extends BaseElement
     }
 
     /**
-     * Get the the array of the <occupation> elements.
+     * Get the array of the <occupation> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#occupation
      *
      * @access public

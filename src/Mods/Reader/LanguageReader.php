@@ -61,7 +61,7 @@ trait LanguageReader
     }
 
     /**
-     * Get the the first matching <language> element.
+     * Get the first matching <language> element.
      * @see https://www.loc.gov/standards/mods/userguide/language.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait LanguageReader
     }
 
     /**
-     * Get the the last matching <language> element.
+     * Get the last matching <language> element.
      * @see https://www.loc.gov/standards/mods/userguide/language.html
      *
      * @access public

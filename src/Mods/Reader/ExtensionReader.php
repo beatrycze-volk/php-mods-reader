@@ -22,7 +22,7 @@ trait ExtensionReader
 {
 
     /**
-     * Get the the array of the <extension> elements.
+     * Get the array of the <extension> elements.
      * @see https://www.loc.gov/standards/mods/userguide/extension.html
      *
      * @access public
@@ -62,7 +62,7 @@ trait ExtensionReader
     }
 
     /**
-     * Get the the first matching <extension> element.
+     * Get the first matching <extension> element.
      * @see https://www.loc.gov/standards/mods/userguide/extension.html
      *
      * @access public
@@ -77,7 +77,7 @@ trait ExtensionReader
     }
 
     /**
-     * Get the the last matching <extension> element.
+     * Get the last matching <extension> element.
      * @see https://www.loc.gov/standards/mods/userguide/extension.html
      *
      * @access public

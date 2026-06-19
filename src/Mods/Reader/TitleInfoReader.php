@@ -21,7 +21,7 @@ trait TitleInfoReader
 {
 
     /**
-     * Get the the array of the <titleInfo> elements.
+     * Get the array of the <titleInfo> elements.
      * @see https://www.loc.gov/standards/mods/userguide/titleinfo.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait TitleInfoReader
     }
 
     /**
-     * Get the the first matching <titleInfo> element.
+     * Get the first matching <titleInfo> element.
      * @see https://www.loc.gov/standards/mods/userguide/titleinfo.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait TitleInfoReader
     }
 
     /**
-     * Get the the last matching <titleInfo> element.
+     * Get the last matching <titleInfo> element.
      * @see https://www.loc.gov/standards/mods/userguide/titleinfo.html
      *
      * @access public

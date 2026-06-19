@@ -21,7 +21,7 @@ trait LocationReader
 {
 
     /**
-     * Get the the array of the <location> elements.
+     * Get the array of the <location> elements.
      * @see https://www.loc.gov/standards/mods/userguide/location.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait LocationReader
     }
 
     /**
-     * Get the the first matching <location> element.
+     * Get the first matching <location> element.
      * @see https://www.loc.gov/standards/mods/userguide/location.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait LocationReader
     }
 
     /**
-     * Get the the last matching <location> element.
+     * Get the last matching <location> element.
      * @see https://www.loc.gov/standards/mods/userguide/location.html
      *
      * @access public

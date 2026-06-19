@@ -21,10 +21,9 @@ class Query
 {
 
     /**
-     * @access private
      * @var string The query
      **/
-    private $xPath;
+    private string $xPath;
 
     /**
      * This creates the query eq. './xyz[@att="zty"]="vcx"'.
@@ -41,19 +40,19 @@ class Query
     public function __construct(string $xpath, string $query = '', array $attributes = [], string $value = '')
     {
         if (!empty($query) && !empty($attributes) && !empty($value)) {
-            $xpath .= '[' . $query . '[' . $this->getParsedAttributes($attributes) .']="' . $value .'"]';
+            $xpath .= '[' . $query . '[' . $this->getParsedAttributes($attributes) . ']="' . $value . '"]';
         } else if (empty($query) && !empty($attributes) && !empty($value)) {
-            $xpath .= '[' . $this->getParsedAttributes($attributes) .']="' . $value .'"';
+            $xpath .= '[' . $this->getParsedAttributes($attributes) . ']="' . $value . '"';
         } else if (empty($query) && empty($attributes) && !empty($value)) {
-            $xpath .= '="' . $value.'"';
+            $xpath .= '="' . $value . '"';
         } else if (empty($query) && !empty($attributes) && empty($value)) {
-            $xpath .= '[' . $this->getParsedAttributes($attributes) .']';
+            $xpath .= '[' . $this->getParsedAttributes($attributes) . ']';
         } else if (!empty($query) && empty($attributes) && empty($value)) {
-            $xpath .= '[' . $query .']';
+            $xpath .= '[' . $query . ']';
         } else if (!empty($query) && empty($attributes) && !empty($value)) {
-            $xpath .= '[' . $query .']="' . $value .'"';
+            $xpath .= '[' . $query . ']="' . $value . '"';
         } else if (!empty($query) && !empty($attributes) && empty($value)) {
-            $xpath .= '[' . $query .'[' . $this->getParsedAttributes($attributes) . ']]';
+            $xpath .= '[' . $query . '[' . $this->getParsedAttributes($attributes) . ']]';
         }
 
         $this->xPath = $xpath;
@@ -61,7 +60,6 @@ class Query
 
     public function getXPath(): string
     {
-        var_dump($this->xPath);
         return $this->xPath;
     }
 
@@ -75,17 +73,19 @@ class Query
             foreach ($attributes as $key => $value) {
                 $parsedAttributes .= '@' . $key . '="' . $value . '"';
             }
-        } else {
-            $i = 0;
-            $lastIndex = $amountAttributes - 1;
 
-            foreach ($attributes as $key => $value) {
-                $parsedAttributes .= '@' . $key . '="' . $value . '"';
-                if ($i < $lastIndex) {
-                    $parsedAttributes .= ' AND ';
-                }
-                $i++;
+            return $parsedAttributes;
+        }
+
+        $index = 0;
+        $lastIndex = $amountAttributes - 1;
+
+        foreach ($attributes as $key => $value) {
+            $parsedAttributes .= '@' . $key . '="' . $value . '"';
+            if ($index < $lastIndex) {
+                $parsedAttributes .= ' AND ';
             }
+            $index++;
         }
 
         return $parsedAttributes;

@@ -28,7 +28,7 @@ class IdentifierReaderTest extends ModsReaderTest
     {
         $identifiers = $this->bookReader->getIdentifiers();
         self::assertNotEmpty($identifiers);
-        self::assertEquals(2, count($identifiers));
+        self::assertCount(2, $identifiers);
         self::assertFirstIdentifierForBookDocument($identifiers[0]);
     }
 
@@ -66,7 +66,7 @@ class IdentifierReaderTest extends ModsReaderTest
     {
         $identifiers = $this->bookReader->getIdentifiers('[@type="lccn"]');
         self::assertNotEmpty($identifiers);
-        self::assertEquals(1, count($identifiers));
+        self::assertCount(1, $identifiers);
         self::assertSecondIdentifierForBookDocument($identifiers[0]);
     }
 
@@ -140,7 +140,7 @@ class IdentifierReaderTest extends ModsReaderTest
     {
         $identifiers = $this->serialReader->getIdentifiers();
         self::assertNotEmpty($identifiers);
-        self::assertEquals(4, count($identifiers));
+        self::assertCount(4, $identifiers);
         self::assertFirstIdentifierForSerialDocument($identifiers[0]);
     }
 
@@ -178,7 +178,7 @@ class IdentifierReaderTest extends ModsReaderTest
     {
         $identifiers = $this->serialReader->getIdentifiers('[@type="issn"]');
         self::assertNotEmpty($identifiers);
-        self::assertEquals(2, count($identifiers));
+        self::assertCount(2, $identifiers);
         self::assertSecondIdentifierForSerialDocument($identifiers[1]);
     }
 

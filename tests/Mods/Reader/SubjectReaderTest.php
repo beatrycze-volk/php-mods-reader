@@ -28,7 +28,7 @@ class SubjectReaderTest extends ModsReaderTest
     {
         $subjects = $this->bookReader->getSubjects();
         self::assertNotEmpty($subjects);
-        self::assertEquals(8, count($subjects));
+        self::assertCount(8, $subjects);
         self::assertFirstSubjectForBookDocument($subjects[0]);
     }
 
@@ -66,7 +66,7 @@ class SubjectReaderTest extends ModsReaderTest
     {
         $subjects = $this->bookReader->getSubjects('[./mods:topic="Mass media"]');
         self::assertNotEmpty($subjects);
-        self::assertEquals(1, count($subjects));
+        self::assertCount(1, $subjects);
         self::assertFourthSubjectForBookDocument($subjects[0]);
     }
 
@@ -140,7 +140,7 @@ class SubjectReaderTest extends ModsReaderTest
     {
         $subjects = $this->serialReader->getSubjects();
         self::assertNotEmpty($subjects);
-        self::assertEquals(7, count($subjects));
+        self::assertCount(7, $subjects);
         self::assertNotEmpty($subjects[0]->getValue());
         self::assertNotEmpty($subjects[0]->getCartographics());
 
@@ -160,7 +160,7 @@ class SubjectReaderTest extends ModsReaderTest
     {
         $subjects = $this->serialReader->getSubjects('[./mods:genre="Directories"]');
         self::assertNotEmpty($subjects);
-        self::assertEquals(1, count($subjects));
+        self::assertCount(1, $subjects);
         self::assertNotEmpty($subjects[0]->getValue());
         self::assertNotEmpty($subjects[0]->getTopics());
         self::assertEquals('Web sites', $subjects[0]->getTopics()[0]->getValue());
@@ -186,7 +186,7 @@ class SubjectReaderTest extends ModsReaderTest
 
         $countries = $hierarchicalGeographics[0]->getCountries();
         self::assertNotEmpty($countries);
-        self::assertEquals(2, count($countries));
+        self::assertCount(2, $countries);
         self::assertEquals(1, $countries[0]->getLevel());
         self::assertEquals('United Kingdom', $countries[0]->getValue());
         self::assertNotEmpty($hierarchicalGeographics[0]->getRegions());
@@ -198,13 +198,14 @@ class SubjectReaderTest extends ModsReaderTest
 
         $citySections = $hierarchicalGeographics[0]->getCitySections();
         self::assertNotEmpty($citySections);
-        self::assertEquals(2, count($citySections));
+        self::assertCount(2, $citySections);
         self::assertEquals('neighborhood', $citySections[0]->getType());
         self::assertEquals(1, $citySections[0]->getLevel());
         self::assertEquals('East Side', $citySections[0]->getValue());
 
         $areas = $hierarchicalGeographics[0]->getAreas();
         self::assertNotEmpty($areas);
+        self::assertCount(1, $areas);
         self::assertEquals('national park', $areas[0]->getType());
         self::assertEquals('Lake District', $areas[0]->getValue());
     }

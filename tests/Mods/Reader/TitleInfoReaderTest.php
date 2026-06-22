@@ -27,7 +27,7 @@ class TitleInfoReaderTest extends ModsReaderTest
     {
         $titleInfos = $this->bookReader->getTitleInfos();
         self::assertNotEmpty($titleInfos);
-        self::assertEquals(2, count($titleInfos));
+        self::assertCount(2, $titleInfos);
         self::assertNotEmpty($titleInfos[0]->getValue());
         self::assertEquals('Sound and fury', $titleInfos[0]->getTitle()->getValue());
         self::assertEquals('the making of the punditocracy', $titleInfos[0]->getSubTitle()->getValue());
@@ -40,7 +40,7 @@ class TitleInfoReaderTest extends ModsReaderTest
     {
         $titleInfos = $this->bookReader->getTitleInfos('[@xml:lang="fr"]');
         self::assertNotEmpty($titleInfos);
-        self::assertEquals(1, count($titleInfos));
+        self::assertCount(1, $titleInfos);
         self::assertNotEmpty($titleInfos[0]->getValue());
         self::assertNotEmpty($titleInfos[0]->getType());
         self::assertEquals('translated', $titleInfos[0]->getType());
@@ -59,7 +59,7 @@ class TitleInfoReaderTest extends ModsReaderTest
     {
         $titleInfos = $this->serialReader->getTitleInfos();
         self::assertNotEmpty($titleInfos);
-        self::assertEquals(3, count($titleInfos));
+        self::assertCount(3, $titleInfos);
         self::assertNotEmpty($titleInfos[0]->getValue());
         self::assertNotEmpty($titleInfos[0]->getTitle());
         self::assertEquals('E-JASL', $titleInfos[0]->getTitle()->getValue());
@@ -74,7 +74,7 @@ class TitleInfoReaderTest extends ModsReaderTest
     {
         $titleInfos = $this->serialReader->getTitleInfos('[@type="abbreviated"]');
         self::assertNotEmpty($titleInfos);
-        self::assertEquals(1, count($titleInfos));
+        self::assertCount(1, $titleInfos);
         self::assertNotEmpty($titleInfos[0]->getValue());
         self::assertEquals('E-JASL', $titleInfos[0]->getTitle()->getValue());
         self::assertNotEmpty($titleInfos[0]->getSubTitle());

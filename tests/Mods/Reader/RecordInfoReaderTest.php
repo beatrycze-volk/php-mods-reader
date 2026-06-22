@@ -26,7 +26,7 @@ class RecordInfoReaderTest extends ModsReaderTest
     {
         $recordInfos = $this->bookReader->getRecordInfos();
         self::assertNotEmpty($recordInfos);
-        self::assertEquals(1, count($recordInfos));
+        self::assertCount(1, $recordInfos);
         self::assertRecordInfoForBookDocument($recordInfos[0]);
     }
 
@@ -52,7 +52,7 @@ class RecordInfoReaderTest extends ModsReaderTest
     {
         $recordInfos = $this->bookReader->getRecordInfos('[./mods:descriptionStandard="aacr"]');
         self::assertNotEmpty($recordInfos);
-        self::assertEquals(1, count($recordInfos));
+        self::assertCount(1, $recordInfos);
         self::assertRecordInfoForBookDocument($recordInfos[0]);
     }
 
@@ -96,7 +96,7 @@ class RecordInfoReaderTest extends ModsReaderTest
     {
         $recordInfos = $this->serialReader->getRecordInfos();
         self::assertNotEmpty($recordInfos);
-        self::assertEquals(1, count($recordInfos));
+        self::assertCount(1, $recordInfos);
         self::assertRecordInfoForSerialDocument($recordInfos[0]);
 
         $this->expectException(IncorrectValueInAttributeException::class);
@@ -107,7 +107,7 @@ class RecordInfoReaderTest extends ModsReaderTest
     {
         $recordInfos = $this->serialReader->getRecordInfos('[./mods:descriptionStandard="aacr"]');
         self::assertNotEmpty($recordInfos);
-        self::assertEquals(1, count($recordInfos));
+        self::assertCount(1, $recordInfos);
         self::assertRecordInfoForSerialDocument($recordInfos[0]);
 
         $this->expectException(IncorrectValueInAttributeException::class);
@@ -175,7 +175,7 @@ class RecordInfoReaderTest extends ModsReaderTest
 
         $recordInfoNotes = $recordInfo->getRecordInfoNotes();
         self::assertNotEmpty($recordInfo->getRecordInfoNotes());
-        self::assertEquals(2, count($recordInfoNotes));
+        self::assertCount(2, $recordInfoNotes);
         self::assertEquals('Some info', $recordInfoNotes[1]->getValue());
 
         $languages = $recordInfo->getLanguageOfCatalogings();

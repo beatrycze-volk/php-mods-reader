@@ -29,7 +29,7 @@ class LocationReaderTest extends ModsReaderTest
     {
         $locations = $this->bookReader->getLocations();
         self::assertNotEmpty($locations);
-        self::assertEquals(2, count($locations));
+        self::assertCount(2, $locations);
         self::assertFirstLocationForBookDocument($locations[0]);
     }
 
@@ -67,7 +67,7 @@ class LocationReaderTest extends ModsReaderTest
     {
         $locations = $this->bookReader->getLocations('[@displayLabel="links"]');
         self::assertNotEmpty($locations);
-        self::assertEquals(1, count($locations));
+        self::assertCount(1, $locations);
         self::assertSecondLocationForBookDocument($locations[0]);
 
         $this->expectException(IncorrectValueInAttributeException::class);
@@ -144,7 +144,7 @@ class LocationReaderTest extends ModsReaderTest
     {
         $locations = $this->serialReader->getLocations();
         self::assertNotEmpty($locations);
-        self::assertEquals(2, count($locations));
+        self::assertCount(2, $locations);
         self::assertLocationForSerialDocument($locations[0]);
     }
 
@@ -155,7 +155,7 @@ class LocationReaderTest extends ModsReaderTest
     {
         $locations = $this->serialReader->getLocations('[./mods:url[@usage="primaryDisplay"]]');
         self::assertNotEmpty($locations);
-        self::assertEquals(1, count($locations));
+        self::assertCount(1, $locations);
         self::assertLocationForSerialDocument($locations[0]);
     }
 
@@ -196,7 +196,7 @@ class LocationReaderTest extends ModsReaderTest
 
         $urls = $location->getUrls();
         self::assertNotEmpty($urls);
-        self::assertEquals(4, count($urls));
+        self::assertCount(4, $urls);
         self::assertEquals('2024-01-27', $urls[0]->getDateLastAccessed());
         self::assertEquals('http://www.slub-dresden.de/some-url', $urls[0]->getValue());
         self::assertEquals('preview', $urls[1]->getAccess());

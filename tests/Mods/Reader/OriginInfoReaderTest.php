@@ -28,7 +28,7 @@ class OriginInfoReaderTest extends ModsReaderTest
     {
         $originInfos = $this->bookReader->getOriginInfos();
         self::assertNotEmpty($originInfos);
-        self::assertEquals(2, count($originInfos));
+        self::assertCount(2, $originInfos);
         self::assertFirstOriginInfoForBookDocument($originInfos[0]);
     }
 
@@ -66,7 +66,7 @@ class OriginInfoReaderTest extends ModsReaderTest
     {
         $originInfos = $this->bookReader->getOriginInfos('[@eventType="redaction"]');
         self::assertNotEmpty($originInfos);
-        self::assertEquals(1, count($originInfos));
+        self::assertCount(1, $originInfos);
         self::assertSecondOriginInfoForBookDocument($originInfos[0]);
     }
 
@@ -119,7 +119,7 @@ class OriginInfoReaderTest extends ModsReaderTest
     {
         $originInfos = $this->serialReader->getOriginInfos();
         self::assertNotEmpty($originInfos);
-        self::assertEquals(1, count($originInfos));
+        self::assertCount(1, $originInfos);
         self::assertOriginInfoForSerialDocument($originInfos[0]);
     }
 
@@ -130,7 +130,7 @@ class OriginInfoReaderTest extends ModsReaderTest
     {
         $originInfos = $this->serialReader->getOriginInfos('[@eventType="publication"]');
         self::assertNotEmpty($originInfos);
-        self::assertEquals(1, count($originInfos));
+        self::assertCount(1, $originInfos);
         self::assertOriginInfoForSerialDocument($originInfos[0]);
     }
 
@@ -151,7 +151,7 @@ class OriginInfoReaderTest extends ModsReaderTest
 
         $places = $originInfo->getPlaces();
         self::assertNotEmpty($places);
-        self::assertEquals(2, count($places));
+        self::assertCount(2, $places);
 
         $placeTerms = $places[0]->getPlaceTerms();
         self::assertNotEmpty($placeTerms);
@@ -161,7 +161,7 @@ class OriginInfoReaderTest extends ModsReaderTest
 
         $issuedDates = $originInfo->getIssuedDates();
         self::assertNotEmpty($issuedDates);
-        self::assertEquals(2, count($issuedDates));
+        self::assertCount(2, $issuedDates);
         self::assertEquals('marc', $issuedDates[0]->getEncoding());
         self::assertEquals('2000', $issuedDates[0]->getValue());
 
@@ -178,7 +178,7 @@ class OriginInfoReaderTest extends ModsReaderTest
 
         $places = $originInfo->getPlaces();
         self::assertNotEmpty($places);
-        self::assertEquals(2, count($places));
+        self::assertCount(2, $places);
 
         $placeTerms = $places[1]->getPlaceTerms();
         self::assertNotEmpty($placeTerms);
@@ -187,7 +187,7 @@ class OriginInfoReaderTest extends ModsReaderTest
 
         $issuedDates = $originInfo->getIssuedDates();
         self::assertNotEmpty($issuedDates);
-        self::assertEquals(2, count($issuedDates));
+        self::assertCount(2, $issuedDates);
         self::assertEquals('marc', $issuedDates[0]->getEncoding());
         self::assertEquals('1999', $issuedDates[0]->getValue());
 
@@ -202,7 +202,7 @@ class OriginInfoReaderTest extends ModsReaderTest
 
         $places = $originInfo->getPlaces();
         self::assertNotEmpty($places);
-        self::assertEquals(2, count($places));
+        self::assertCount(2, $places);
 
         $placeTerms = $places[0]->getPlaceTerms();
         self::assertNotEmpty($placeTerms);
@@ -212,7 +212,7 @@ class OriginInfoReaderTest extends ModsReaderTest
 
         $issuedDates = $originInfo->getIssuedDates();
         self::assertNotEmpty($issuedDates);
-        self::assertEquals(3, count($issuedDates));
+        self::assertCount(3, $issuedDates);
         self::assertEquals('marc', $issuedDates[0]->getEncoding());
         self::assertEquals('start', $issuedDates[0]->getPoint());
         self::assertEquals('2002', $issuedDates[0]->getValue());
@@ -223,7 +223,7 @@ class OriginInfoReaderTest extends ModsReaderTest
 
         $frequencies = $originInfo->getFrequencies();
         self::assertNotEmpty($frequencies);
-        self::assertEquals(2, count($frequencies));
+        self::assertCount(2, $frequencies);
         self::assertEquals('Three times a year', $frequencies[0]->getValue());
 
         $agents = $originInfo->getAgents();

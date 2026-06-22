@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\RecordInfo;
 use Slub\Mods\Exception\IncorrectValueInAttributeException;
 use Slub\Mods\ModsReaderTest;
@@ -22,7 +23,8 @@ use Slub\Mods\ModsReaderTest;
 class RecordInfoReaderTest extends ModsReaderTest
 {
 
-    public function testGetRecordInfosForBookDocument()
+    #[Test]
+    public function getRecordInfosForBookDocument()
     {
         $recordInfos = $this->bookReader->getRecordInfos();
         self::assertNotEmpty($recordInfos);
@@ -30,25 +32,29 @@ class RecordInfoReaderTest extends ModsReaderTest
         self::assertRecordInfoForBookDocument($recordInfos[0]);
     }
 
-    public function testGetRecordInfoForBookDocument()
+    #[Test]
+    public function getRecordInfoForBookDocument()
     {
         $recordInfo = $this->bookReader->getRecordInfo(0);
         self::assertRecordInfoForBookDocument($recordInfo);
     }
 
-    public function testGetFirstRecordInfoForBookDocument()
+    #[Test]
+    public function getFirstRecordInfoForBookDocument()
     {
         $recordInfo = $this->bookReader->getFirstRecordInfo();
         self::assertRecordInfoForBookDocument($recordInfo);
     }
 
-    public function testGetLastRecordInfoForBookDocument()
+    #[Test]
+    public function getLastRecordInfoForBookDocument()
     {
         $recordInfo = $this->bookReader->getLastRecordInfo();
         self::assertRecordInfoForBookDocument($recordInfo);
     }
 
-    public function testGetRecordInfosByQueryForBookDocument()
+    #[Test]
+    public function getRecordInfosByQueryForBookDocument()
     {
         $recordInfos = $this->bookReader->getRecordInfos('[./mods:descriptionStandard="aacr"]');
         self::assertNotEmpty($recordInfos);
@@ -56,31 +62,36 @@ class RecordInfoReaderTest extends ModsReaderTest
         self::assertRecordInfoForBookDocument($recordInfos[0]);
     }
 
-    public function testGetRecordInfoByQueryForBookDocument()
+    #[Test]
+    public function getRecordInfoByQueryForBookDocument()
     {
         $recordInfo = $this->bookReader->getRecordInfo(0, '[./mods:descriptionStandard="aacr"]');
         self::assertRecordInfoForBookDocument($recordInfo);
     }
 
-    public function testGetFirstRecordInfoByQueryForBookDocument()
+    #[Test]
+    public function getFirstRecordInfoByQueryForBookDocument()
     {
         $recordInfo = $this->bookReader->getFirstRecordInfo('[./mods:descriptionStandard="aacr"]');
         self::assertRecordInfoForBookDocument($recordInfo);
     }
 
-    public function testGetLastRecordInfoByQueryForBookDocument()
+    #[Test]
+    public function getLastRecordInfoByQueryForBookDocument()
     {
         $recordInfo = $this->bookReader->getLastRecordInfo('[./mods:descriptionStandard="aacr"]');
         self::assertRecordInfoForBookDocument($recordInfo);
     }
 
-    public function testGetNoRecordInfosByQueryForBookDocument()
+    #[Test]
+    public function getNoRecordInfosByQueryForBookDocument()
     {
         $recordInfos = $this->bookReader->getRecordInfos('[./mods:descriptionStandard="xyz"]');
         self::assertEmpty($recordInfos);
     }
 
-    public function testGetNoRecordInfoByQueryForBookDocument()
+    #[Test]
+    public function getNoRecordInfoByQueryForBookDocument()
     {
         $recordInfo = $this->bookReader->getRecordInfo(5, '[./mods:descriptionStandard="xyz"]');
         self::assertNull($recordInfo);
@@ -92,7 +103,8 @@ class RecordInfoReaderTest extends ModsReaderTest
         self::assertNull($lastRecordInfo);
     }
 
-    public function testGetRecordInfosForSerialDocument()
+    #[Test]
+    public function getRecordInfosForSerialDocument()
     {
         $recordInfos = $this->serialReader->getRecordInfos();
         self::assertNotEmpty($recordInfos);
@@ -103,7 +115,9 @@ class RecordInfoReaderTest extends ModsReaderTest
         $recordInfos[0]->getRecordCreationDates()[0]->getEncoding();
     }
 
-    public function testGetRecordInfosByQueryForSerialDocument()
+
+    #[Test]
+    public function getRecordInfosByQueryForSerialDocument()
     {
         $recordInfos = $this->serialReader->getRecordInfos('[./mods:descriptionStandard="aacr"]');
         self::assertNotEmpty($recordInfos);
@@ -114,7 +128,8 @@ class RecordInfoReaderTest extends ModsReaderTest
         $recordInfos[0]->getRecordCreationDates()[0]->getEncoding();
     }
 
-    public function testGetNoRecordInfosByQueryForSerialDocument()
+    #[Test]
+    public function getNoRecordInfosByQueryForSerialDocument()
     {
         $recordInfos = $this->serialReader->getRecordInfos('[./mods:descriptionStandard="xyz"]');
         self::assertEmpty($recordInfos);

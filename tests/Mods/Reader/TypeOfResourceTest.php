@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\TypeOfResource;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,36 +22,28 @@ use Slub\Mods\ModsReaderTest;
 class TypeOfResourceReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTypeOfResourceForBookDocument()
     {
         $typeOfResource = $this->bookReader->getTypeOfResource();
         self::assertTypeOfResourceForBookDocument($typeOfResource);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTypeOfResourceByQueryForBookDocument()
     {
         $typeOfResource = $this->bookReader->getTypeOfResource('[@displayLabel="format"]');
         self::assertTypeOfResourceForBookDocument($typeOfResource);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoTypeOfResourceByQueryForBookDocument()
     {
         $typeOfResource = $this->bookReader->getTypeOfResource('[@displayLabel="random"]');
         self::assertNull($typeOfResource);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTypeOfResourceForSerialDocument()
     {
         $typeOfResource = $this->serialReader->getTypeOfResource();
@@ -60,9 +53,7 @@ class TypeOfResourceReaderTest extends ModsReaderTest
         self::assertEquals('text', $typeOfResource->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoTypeOfResourceByQueryForSerialDocument()
     {
         $abstract = $this->serialReader->getAbstract('[@displayForm="format"]');

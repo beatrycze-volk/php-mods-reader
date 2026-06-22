@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\ModsReaderTest;
 
 /**
@@ -20,18 +21,14 @@ use Slub\Mods\ModsReaderTest;
 class ExtensionReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getExtensionsForBookDocument()
     {
         // $extensions = $this->bookReader->getExtensions();
         $this->assertTrue(true, 'WIP');
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getExtensionsForSerialDocument()
     {
         // $extensions = $this->serialReader->getExtensions();

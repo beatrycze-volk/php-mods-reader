@@ -11,6 +11,7 @@
  */
 namespace Slub\Mods\Utility;
 
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 class QueryTest extends TestCase
@@ -76,9 +77,7 @@ class QueryTest extends TestCase
         ]
     ];
 
-    /**
-     * @test
-     */
+    #[Test]
     public function testConstructorAppendsCorrectXpath()
     {
         $initialXPath = '/initial/xpath';

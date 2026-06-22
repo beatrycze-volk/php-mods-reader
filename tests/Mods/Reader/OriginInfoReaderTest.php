@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\OriginInfo;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class OriginInfoReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getOriginInfosForBookDocument()
     {
         $originInfos = $this->bookReader->getOriginInfos();
@@ -32,36 +31,28 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertFirstOriginInfoForBookDocument($originInfos[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getOriginInfoForBookDocument()
     {
         $originInfo = $this->bookReader->getOriginInfo(1);
         self::assertSecondOriginInfoForBookDocument($originInfo);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstOriginInfoForBookDocument()
     {
         $originInfo = $this->bookReader->getFirstOriginInfo();
         self::assertFirstOriginInfoForBookDocument($originInfo);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastOriginInfoForBookDocument()
     {
         $originInfo = $this->bookReader->getLastOriginInfo();
         self::assertSecondOriginInfoForBookDocument($originInfo);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getOriginInfosByQueryForBookDocument()
     {
         $originInfos = $this->bookReader->getOriginInfos('[@eventType="redaction"]');
@@ -70,9 +61,7 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertSecondOriginInfoForBookDocument($originInfos[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoOriginInfosByQueryForBookDocument()
     {
         $originInfos = $this->bookReader->getOriginInfos('[@eventType="xyz"]');
@@ -85,36 +74,28 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertNull($lastOriginInfo);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoOriginInfoByQueryForBookDocument()
     {
         $originInfo = $this->bookReader->getOriginInfo(4, '[@eventType="xyz"]');
         self::assertNull($originInfo);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstOriginInfoByQueryForBookDocument()
     {
         $originInfo = $this->bookReader->getFirstOriginInfo('[@eventType="xyz"]');
         self::assertNull($originInfo);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastOriginInfoByQueryForBookDocument()
     {
         $originInfo = $this->bookReader->getLastOriginInfo('[@eventType="xyz"]');
         self::assertNull($originInfo);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getOriginInfosForSerialDocument()
     {
         $originInfos = $this->serialReader->getOriginInfos();
@@ -123,9 +104,7 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertOriginInfoForSerialDocument($originInfos[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getOriginInfosByQueryForSerialDocument()
     {
         $originInfos = $this->serialReader->getOriginInfos('[@eventType="publication"]');
@@ -134,9 +113,7 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertOriginInfoForSerialDocument($originInfos[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoOriginInfosByQueryForSerialDocument()
     {
         $originInfos = $this->serialReader->getOriginInfos('[@eventType="xyz"]');

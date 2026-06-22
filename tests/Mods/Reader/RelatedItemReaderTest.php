@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\RelatedItem;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,45 +22,35 @@ use Slub\Mods\ModsReaderTest;
 class RelatedItemReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoRelatedItemsForBookDocument()
     {
         $relatedItems = $this->bookReader->getRelatedItems();
         self::assertEmpty($relatedItems);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoRelatedItemForBookDocument()
     {
         $relatedItem = $this->bookReader->getRelatedItem(0);
         self::assertNull($relatedItem);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstRelatedItemForBookDocument()
     {
         $relatedItem = $this->bookReader->getFirstRelatedItem();
         self::assertNull($relatedItem);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastRelatedItemForBookDocument()
     {
         $relatedItem = $this->bookReader->getLastRelatedItem();
         self::assertNull($relatedItem);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getRelatedItemsForSerialDocument()
     {
         $relatedItems = $this->serialReader->getRelatedItems();
@@ -68,36 +59,28 @@ class RelatedItemReaderTest extends ModsReaderTest
         self::assertRelatedItemForSerialDocument($relatedItems[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getRelatedItemForSerialDocument()
     {
         $relatedItem = $this->serialReader->getRelatedItem(0);
         self::assertRelatedItemForSerialDocument($relatedItem);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstRelatedItemForSerialDocument()
     {
         $relatedItem = $this->serialReader->getFirstRelatedItem();
         self::assertRelatedItemForSerialDocument($relatedItem);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastRelatedItemForSerialDocument()
     {
         $relatedItem = $this->serialReader->getLastRelatedItem();
         self::assertRelatedItemForSerialDocument($relatedItem);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getRelatedItemsByQueryForSerialDocument()
     {
         $relatedItems = $this->serialReader->getRelatedItems('[./mods:identifier="1525-321X"]');
@@ -106,9 +89,7 @@ class RelatedItemReaderTest extends ModsReaderTest
         self::assertRelatedItemForSerialDocument($relatedItems[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoRelatedItemsByQueryForSerialDocument()
     {
         $relatedItems = $this->serialReader->getRelatedItems('[./mods:identifier="15-32"]');

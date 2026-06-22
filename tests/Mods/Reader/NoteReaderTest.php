@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Note;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class NoteReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNotesForBookDocument()
     {
         $notes = $this->bookReader->getNotes();
@@ -32,36 +31,28 @@ class NoteReaderTest extends ModsReaderTest
         self::assertFirstNoteForBookDocument($notes[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoteForBookDocument()
     {
         $note = $this->bookReader->getNote(1);
         self::assertSecondNoteForBookDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstNoteForBookDocument()
     {
         $note = $this->bookReader->getFirstNote();
         self::assertFirstNoteForBookDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastNoteForBookDocument()
     {
         $note = $this->bookReader->getLastNote();
         self::assertSecondNoteForBookDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNotesByQueryForBookDocument()
     {
         $notes = $this->bookReader->getNotes('[@type="bibliography"]');
@@ -70,72 +61,56 @@ class NoteReaderTest extends ModsReaderTest
         self::assertSecondNoteForBookDocument($notes[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoteByQueryForBookDocument()
     {
         $note = $this->bookReader->getNote(0, '[@type="bibliography"]');
         self::assertSecondNoteForBookDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstNoteByQueryForBookDocument()
     {
         $note = $this->bookReader->getFirstNote('[@type="bibliography"]');
         self::assertSecondNoteForBookDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastNoteByQueryForBookDocument()
     {
         $note = $this->bookReader->getLastNote('[@type="bibliography"]');
         self::assertSecondNoteForBookDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoNotesByQueryForBookDocument()
     {
         $notes = $this->bookReader->getNotes('[@type="xyz"]');
         self::assertEmpty($notes);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoNoteByQueryForBookDocument()
     {
         $note = $this->bookReader->getNote(0, '[@type="xyz"]');
         self::assertNull($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstNoteByQueryForBookDocument()
     {
         $note = $this->bookReader->getFirstNote('[@type="xyz"]');
         self::assertNull($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastNoteByQueryForBookDocument()
     {
         $note = $this->bookReader->getLastNote('[@type="xyz"]');
         self::assertNull($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNotesForSerialDocument()
     {
         $notes = $this->serialReader->getNotes();
@@ -144,36 +119,28 @@ class NoteReaderTest extends ModsReaderTest
         self::assertFirstNoteForSerialDocument($notes[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoteForSerialDocument()
     {
         $note = $this->serialReader->getNote(5);
         self::assertSixthNoteForSerialDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstNoteForSerialDocument()
     {
         $note = $this->serialReader->getFirstNote();
         self::assertFirstNoteForSerialDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastNoteForSerialDocument()
     {
         $note = $this->serialReader->getLastNote();
         self::assertSixthNoteForSerialDocument($note);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNotesByQueryForSerialDocument()
     {
         $notes = $this->serialReader->getNotes('[@type="system details"]');
@@ -182,9 +149,7 @@ class NoteReaderTest extends ModsReaderTest
         self::assertFifthNoteForSerialDocument($notes[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoNotesByQueryForSerialDocument()
     {
         $notes = $this->serialReader->getNotes('[@type="xyz"]');

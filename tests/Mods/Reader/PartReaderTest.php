@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Part;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class PartReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPartsForBookDocument()
     {
         $parts = $this->bookReader->getParts();
@@ -32,36 +31,28 @@ class PartReaderTest extends ModsReaderTest
         self::assertFirstPartForBookDocument($parts[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPartForBookDocument()
     {
         $part = $this->bookReader->getPart(1);
         self::assertSecondPartForBookDocument($part);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstPartForBookDocument()
     {
         $part = $this->bookReader->getFirstPart();
         self::assertFirstPartForBookDocument($part);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastPartForBookDocument()
     {
         $part = $this->bookReader->getLastPart();
         self::assertSecondPartForBookDocument($part);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPartsByQueryForBookDocument()
     {
         $parts = $this->bookReader->getParts('[@order="2"]');
@@ -70,45 +61,35 @@ class PartReaderTest extends ModsReaderTest
         self::assertSecondPartForBookDocument($parts[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoPartsByQueryForBookDocument()
     {
         $parts = $this->bookReader->getParts('[@order="3"]');
         self::assertEmpty($parts);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoPartByQueryForBookDocument()
     {
         $part = $this->bookReader->getPart(0, '[@order="3"]');
         self::assertNull($part);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstPartByQueryForBookDocument()
     {
         $part = $this->bookReader->getFirstPart('[@order="3"]');
         self::assertNull($part);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastPartByQueryForBookDocument()
     {
         $part = $this->bookReader->getLastPart('[@order="3"]');
         self::assertNull($part);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoPartsForSerialDocument()
     {
         $parts = $this->serialReader->getParts();

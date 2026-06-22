@@ -96,7 +96,7 @@ class PartReaderTest extends ModsReaderTest
         self::assertEmpty($parts);
     }
 
-    private static function assertFirstPartForBookDocument(Part $part)
+    private static function assertFirstPartForBookDocument(Part $part): void
     {
         self::assertNotEmpty($part->getValue());
         self::assertNotEmpty($part->getType());
@@ -127,7 +127,7 @@ class PartReaderTest extends ModsReaderTest
         self::assertEquals('Some random text', $texts[0]->getValue());
     }
 
-    private static function assertSecondPartForBookDocument(Part $part)
+    private static function assertSecondPartForBookDocument(Part $part): void
     {
         self::assertNotEmpty($part->getValue());
         self::assertNotEmpty($part->getType());

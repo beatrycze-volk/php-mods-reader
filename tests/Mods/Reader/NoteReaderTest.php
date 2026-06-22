@@ -156,7 +156,7 @@ class NoteReaderTest extends ModsReaderTest
         self::assertEmpty($notes);
     }
 
-    private static function assertFirstNoteForBookDocument(Note $note)
+    private static function assertFirstNoteForBookDocument(Note $note): void
     {
         self::assertNotEmpty($note->getValue());
         self::assertEquals('Eric Alterman.', $note->getValue());
@@ -164,7 +164,7 @@ class NoteReaderTest extends ModsReaderTest
         self::assertEquals('statement of responsibility', $note->getType());
     }
 
-    private static function assertSecondNoteForBookDocument(Note $note)
+    private static function assertSecondNoteForBookDocument(Note $note): void
     {
         self::assertNotEmpty($note->getValue());
         self::assertEquals('Includes bibliographical references (p. 291-312) and index.', $note->getValue());
@@ -172,7 +172,7 @@ class NoteReaderTest extends ModsReaderTest
         self::assertEquals('bibliography', $note->getType());
     }
 
-    private static function assertFirstNoteForSerialDocument(Note $note)
+    private static function assertFirstNoteForSerialDocument(Note $note): void
     {
         self::assertNotEmpty($note->getValue());
         self::assertEquals('V. 3, no. 1/2 (winter 2002)-', $note->getValue());
@@ -180,7 +180,7 @@ class NoteReaderTest extends ModsReaderTest
         self::assertEquals('date/sequential designation', $note->getType());
     }
 
-    private static function assertFifthNoteForSerialDocument(Note $note)
+    private static function assertFifthNoteForSerialDocument(Note $note): void
     {
         self::assertNotEmpty($note->getValue());
         self::assertEquals('Mode of access: World Wide Web.', $note->getValue());
@@ -188,7 +188,7 @@ class NoteReaderTest extends ModsReaderTest
         self::assertEquals('system details', $note->getType());
     }
 
-    private static function assertSixthNoteForSerialDocument(Note $note)
+    private static function assertSixthNoteForSerialDocument(Note $note): void
     {
         self::assertNotEmpty($note->getValue());
         self::assertEquals('Electronic serial in HTML format.', $note->getValue());

@@ -135,7 +135,7 @@ class NameReaderTest extends ModsReaderTest
         self::assertEmpty($names);
     }
 
-    private static function assertFirstNameForBookDocument(Name $name)
+    private static function assertFirstNameForBookDocument(Name $name): void
     {
         self::assertNotEmpty($name->getType());
         self::assertEquals('personal', $name->getType());
@@ -157,7 +157,7 @@ class NameReaderTest extends ModsReaderTest
         self::assertEquals('creator', $roleTerms[0]->getValue());
     }
 
-    private static function assertSecondNameForBookDocument(Name $name)
+    private static function assertSecondNameForBookDocument(Name $name): void
     {
         self::assertNotEmpty($name->getType());
         self::assertEquals('personal', $name->getType());
@@ -180,7 +180,7 @@ class NameReaderTest extends ModsReaderTest
         self::assertEquals('author', $roleTerms[0]->getValue());
     }
 
-    private static function assertNameForSerialDocument(Name $name)
+    private static function assertNameForSerialDocument(Name $name): void
     {
         self::assertNotEmpty($name->getValue());
 

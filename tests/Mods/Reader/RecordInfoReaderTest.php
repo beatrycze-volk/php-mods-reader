@@ -135,7 +135,7 @@ class RecordInfoReaderTest extends ModsReaderTest
         self::assertEmpty($recordInfos);
     }
 
-    private static function assertRecordInfoForBookDocument(RecordInfo $recordInfo)
+    private static function assertRecordInfoForBookDocument(RecordInfo $recordInfo): void
     {
         self::assertNotEmpty($recordInfo->getValue());
         self::assertNotEmpty($recordInfo->getDescriptionStandards());
@@ -164,7 +164,7 @@ class RecordInfoReaderTest extends ModsReaderTest
         self::assertStringContainsString('Converted from MARCXML to MODS', $recordInfo->getRecordOrigins()[0]->getValue());
     }
 
-    private static function assertRecordInfoForSerialDocument(RecordInfo $recordInfo)
+    private static function assertRecordInfoForSerialDocument(RecordInfo $recordInfo): void
     {
         self::assertNotEmpty($recordInfo->getValue());
         self::assertNotEmpty($recordInfo->getDescriptionStandards());

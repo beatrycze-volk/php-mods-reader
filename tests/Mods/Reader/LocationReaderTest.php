@@ -139,7 +139,7 @@ class LocationReaderTest extends ModsReaderTest
         self::assertEmpty($locations);
     }
 
-    private static function assertFirstLocationForBookDocument(Location $location)
+    private static function assertFirstLocationForBookDocument(Location $location): void
     {
         self::assertNotEmpty($location->getValue());
 
@@ -161,7 +161,7 @@ class LocationReaderTest extends ModsReaderTest
         self::assertEquals('v.1-v.2 1999-2002', $copyInformation[0]->getEnumerationAndChronologies()[0]->getValue());
     }
 
-    private static function assertSecondLocationForBookDocument(Location $location)
+    private static function assertSecondLocationForBookDocument(Location $location): void
     {
         self::assertNotEmpty($location->getValue());
 
@@ -174,7 +174,7 @@ class LocationReaderTest extends ModsReaderTest
         self::assertEquals('http://www.slub-dresden.de/some-url/SLO-0000', $urls[1]->getValue());
     }
 
-    private static function assertLocationForSerialDocument(Location $location)
+    private static function assertLocationForSerialDocument(Location $location): void
     {
         $urls = $location->getUrls();
         self::assertNotEmpty($urls);

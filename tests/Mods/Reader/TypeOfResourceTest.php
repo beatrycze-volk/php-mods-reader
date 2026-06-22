@@ -60,7 +60,7 @@ class TypeOfResourceReaderTest extends ModsReaderTest
         self::assertNull($abstract);
     }
 
-    private static function assertTypeOfResourceForBookDocument(TypeOfResource $typeOfResource)
+    private static function assertTypeOfResourceForBookDocument(TypeOfResource $typeOfResource): void
     {
         self::assertNotNull($typeOfResource);
         self::assertNotEmpty($typeOfResource->getDisplayLabel());

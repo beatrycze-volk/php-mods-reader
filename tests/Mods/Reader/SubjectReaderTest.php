@@ -148,7 +148,7 @@ class SubjectReaderTest extends ModsReaderTest
         self::assertEmpty($subjects);
     }
 
-    private static function assertFirstSubjectForBookDocument(Subject $subject)
+    private static function assertFirstSubjectForBookDocument(Subject $subject): void
     {
         self::assertNotEmpty($subject->getValue());
 
@@ -181,7 +181,7 @@ class SubjectReaderTest extends ModsReaderTest
         self::assertEquals('Lake District', $areas[0]->getValue());
     }
 
-    private static function assertSecondSubjectForBookDocument(Subject $subject)
+    private static function assertSecondSubjectForBookDocument(Subject $subject): void
     {
         self::assertNotEmpty($subject->getValue());
 
@@ -191,7 +191,7 @@ class SubjectReaderTest extends ModsReaderTest
         self::assertEquals('n-us---', $geographicCodes[0]->getValue());
     }
 
-    private static function assertFourthSubjectForBookDocument(Subject $subject)
+    private static function assertFourthSubjectForBookDocument(Subject $subject): void
     {
         self::assertNotEmpty($subject->getValue());
         self::assertEquals('lcsh', $subject->getAuthority());
@@ -206,7 +206,7 @@ class SubjectReaderTest extends ModsReaderTest
         self::assertEquals('United States', $geographics[0]->getValue());
     }
 
-    private static function assertEightSubjectForBookDocument(Subject $subject)
+    private static function assertEightSubjectForBookDocument(Subject $subject): void
     {
         self::assertNotEmpty($subject->getValue());
         self::assertEquals('lcsh', $subject->getAuthority());

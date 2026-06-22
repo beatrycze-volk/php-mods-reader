@@ -135,7 +135,7 @@ class LanguageReaderTest extends ModsReaderTest
         self::assertEmpty($languages);
     }
 
-    private static function assertFirstLanguageForBookDocument(Language $language)
+    private static function assertFirstLanguageForBookDocument(Language $language): void
     {
         self::assertEmpty($language->getObjectPart());
         self::assertNotEmpty($language->getValue());
@@ -154,7 +154,7 @@ class LanguageReaderTest extends ModsReaderTest
         self::assertEquals('Latn', $scriptTerms[0]->getValue());
     }
 
-    private static function assertSecondLanguageForBookDocument(Language $language)
+    private static function assertSecondLanguageForBookDocument(Language $language): void
     {
         self::assertNotEmpty($language->getObjectPart());
         self::assertEquals('summary', $language->getObjectPart());
@@ -168,13 +168,13 @@ class LanguageReaderTest extends ModsReaderTest
         self::assertEquals('spa', $languageTerms[0]->getValue());
 
         $scriptTerms = $language->getScriptTerms();
-        self::assertNotEmpty($language->getScriptTerms());
+        self::assertNotEmpty($scriptTerms);
         self::assertEquals('code', $scriptTerms[0]->getType());
         self::assertEquals('iso15924', $scriptTerms[0]->getAuthority());
         self::assertEquals('Latn', $scriptTerms[0]->getValue());
     }
 
-    private static function assertLanguageForSerialDocument(Language $language)
+    private static function assertLanguageForSerialDocument(Language $language): void
     {
         self::assertEmpty($language->getObjectPart());
         self::assertNotEmpty($language->getValue());

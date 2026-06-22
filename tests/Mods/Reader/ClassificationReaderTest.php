@@ -117,7 +117,7 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertEmpty($classifications);
     }
 
-    private static function assertFirstClassificationForBookDocument(Classification $classification)
+    private static function assertFirstClassificationForBookDocument(Classification $classification): void
     {
         self::assertNotEmpty($classification->getValue());
         self::assertEquals('PN4888.P6 A48 1999', $classification->getValue());
@@ -127,7 +127,7 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertEmpty($classification->getUsage());
     }
 
-    private static function assertSecondClassificationForBookDocument(Classification $classification)
+    private static function assertSecondClassificationForBookDocument(Classification $classification): void
     {
         self::assertNotEmpty($classification->getValue());
         self::assertEquals('071/.3', $classification->getValue());
@@ -137,7 +137,7 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertEmpty($classification->getGenerator());
     }
 
-    private static function assertClassificationForSerialDocument(Classification $classification)
+    private static function assertClassificationForSerialDocument(Classification $classification): void
     {
         self::assertNotEmpty($classification->getValue());
         self::assertEquals('027.7/05', $classification->getValue());

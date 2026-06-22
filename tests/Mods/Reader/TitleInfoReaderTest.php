@@ -20,6 +20,9 @@ use Slub\Mods\ModsReaderTest;
 class TitleInfoReaderTest extends ModsReaderTest
 {
 
+    /**
+     * @test
+     */
     public function testGetTitleInfosForBookDocument()
     {
         $titleInfos = $this->bookReader->getTitleInfos();
@@ -30,6 +33,9 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('the making of the punditocracy', $titleInfos[0]->getSubTitle()->getValue());
     }
 
+    /**
+     * @test
+     */
     public function testGetTitleInfosByQueryForBookDocument()
     {
         $titleInfos = $this->bookReader->getTitleInfos('[@xml:lang="fr"]');
@@ -46,6 +52,9 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('la création de la punditocratie', $titleInfos[0]->getSubTitle()->getValue());
     }
 
+    /**
+     * @test
+     */
     public function testGetTitleInfosForSerialDocument()
     {
         $titleInfos = $this->serialReader->getTitleInfos();
@@ -58,6 +67,9 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('the electronic journal of academic and special librarianship', $titleInfos[0]->getSubTitle()->getValue());
     }
 
+    /**
+     * @test
+     */
     public function testGetTitleInfosByQueryForSerialDocument()
     {
         $titleInfos = $this->serialReader->getTitleInfos('[@type="abbreviated"]');
@@ -69,6 +81,9 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('(Athabasca)', $titleInfos[0]->getSubTitle()->getValue());
     }
 
+    /**
+     * @test
+     */
     public function testGetNoTitleInfosByQueryForSerialDocument()
     {
         $titleInfos = $this->serialReader->getTitleInfos('[@type="uniform"]');

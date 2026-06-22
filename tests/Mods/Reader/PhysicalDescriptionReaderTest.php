@@ -62,6 +62,17 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
     /**
      * @test
      */
+    public function gtPhysicalDescriptionsByParametersForBookDocument()
+    {
+        $physicalDescriptions = $this->bookReader->getPhysicalDescriptionsByParameters('./mods:form', ['authority' => 'marcform'], 'print');
+        self::assertNotEmpty($physicalDescriptions);
+        self::assertEquals(1, count($physicalDescriptions));
+        self::assertPhysicalDescriptionForBookDocument($physicalDescriptions[0]);
+    }
+
+    /**
+     * @test
+     */
     public function getPhysicalDescriptionsByQueryForBookDocument()
     {
         $physicalDescriptions = $this->bookReader->getPhysicalDescriptions('[./mods:form[@authority="marcform"]="print"]');

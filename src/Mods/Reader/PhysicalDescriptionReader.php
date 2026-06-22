@@ -13,6 +13,7 @@
 namespace Slub\Mods\Reader;
 
 use Slub\Mods\Element\PhysicalDescription;
+use Slub\Mods\Utility\Query;
 
 /**
  * Trait for reading PhysicalDescription element
@@ -34,6 +35,29 @@ trait PhysicalDescriptionReader
     {
         $physicalDescriptions = [];
         $values = $this->getValues('./mods:physicalDescription' . $query);
+        foreach ($values as $value) {
+            $physicalDescriptions[] = new PhysicalDescription($value);
+        }
+        return $physicalDescriptions;
+    }
+
+    /**
+     * Get the the array of the <physicalDescription> elements by given parameters.
+     * @see https://www.loc.gov/standards/mods/userguide/physicaldescription.html
+     *
+     * @access public
+     *
+     * @param string $query The XPath query for metadata search
+     * @param array $attributes The array of attributes ['attribute' => 'value']
+     * @param string $value The value for metadata search
+     *
+     * @return PhysicalDescription[]
+     */
+    public function getPhysicalDescriptionsByParameters(string $query = '', array $attributes = [], string $value = ''): array
+    {
+        $physicalDescriptions = [];
+        $query = new Query('./mods:physicalDescription', $query, $attributes, $value);
+        $values = $this->getValues($query->getXPath());
         foreach ($values as $value) {
             $physicalDescriptions[] = new PhysicalDescription($value);
         }

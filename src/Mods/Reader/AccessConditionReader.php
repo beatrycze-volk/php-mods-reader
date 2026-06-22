@@ -13,6 +13,7 @@
 namespace Slub\Mods\Reader;
 
 use Slub\Mods\Element\AccessCondition;
+use Slub\Mods\Utility\Query;
 
 /**
  * Trait for reading AccessCondition element
@@ -34,6 +35,29 @@ trait AccessConditionReader
     {
         $accessConditions = [];
         $values = $this->getValues('./mods:accessCondition' . $query);
+        foreach ($values as $value) {
+            $accessConditions[] = new AccessCondition($value);
+        }
+        return $accessConditions;
+    }
+
+    /**
+     * Get the the array of the <accessCondition> elements by given parameters.
+     * @see https://www.loc.gov/standards/mods/userguide/accesscondition.html
+     *
+     * @access public
+     *
+     * @param string $query The XPath query for metadata search
+     * @param array $attributes The array of attributes ['attribute' => 'value']
+     * @param string $value The value for metadata search
+     *
+     * @return AccessCondition[]
+     */
+    public function getAccessConditionsByParameters(string $query = '', array $attributes = [], string $value = ''): array
+    {
+        $accessConditions = [];
+        $query = new Query('./mods:accessCondition', $query, $attributes, $value);
+        $values = $this->getValues($query->getXPath());
         foreach ($values as $value) {
             $accessConditions[] = new AccessCondition($value);
         }

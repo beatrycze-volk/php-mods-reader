@@ -21,7 +21,7 @@ trait RecordInfoReader
 {
 
     /**
-     * Get the the array of the <recordInfo> elements.
+     * Get the array of the <recordInfo> elements.
      * @see https://www.loc.gov/standards/mods/userguide/recordinfo.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait RecordInfoReader
     }
 
     /**
-     * Get the the first matching <recordInfo> element.
+     * Get the first matching <recordInfo> element.
      * @see https://www.loc.gov/standards/mods/userguide/recordinfo.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait RecordInfoReader
     }
 
     /**
-     * Get the the last matching <recordInfo> element.
+     * Get the last matching <recordInfo> element.
      * @see https://www.loc.gov/standards/mods/userguide/recordinfo.html
      *
      * @access public

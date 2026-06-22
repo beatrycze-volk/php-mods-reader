@@ -21,7 +21,7 @@ trait SubjectReader
 {
 
     /**
-     * Get the the array of the <subject> elements.
+     * Get the array of the <subject> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait SubjectReader
     }
 
     /**
-     * Get the the first matching <subject> element.
+     * Get the first matching <subject> element.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait SubjectReader
     }
 
     /**
-     * Get the the last matching <subject> element.
+     * Get the last matching <subject> element.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html
      *
      * @access public

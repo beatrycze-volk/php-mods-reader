@@ -76,7 +76,7 @@ class BaseElement
     }
 
     /**
-     * Get the the array of the matching elements.
+     * Get the array of the matching elements.
      *
      * @access protected
      *

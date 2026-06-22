@@ -21,7 +21,7 @@ trait GenreReader
 {
 
     /**
-     * Get the the array of the <genre> elements.
+     * Get the array of the <genre> elements.
      * @see https://www.loc.gov/standards/mods/userguide/genre.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait GenreReader
     }
 
     /**
-     * Get the the first matching <genre> element.
+     * Get the first matching <genre> element.
      * @see https://www.loc.gov/standards/mods/userguide/genre.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait GenreReader
     }
 
     /**
-     * Get the the last matching <genre> element.
+     * Get the last matching <genre> element.
      * @see https://www.loc.gov/standards/mods/userguide/genre.html
      *
      * @access public

@@ -43,7 +43,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <continent> elements.
+     * Get the array of the <continent> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#continent
      *
      * @access public
@@ -64,7 +64,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <country> elements.
+     * Get the array of the <country> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#country
      *
      * @access public
@@ -85,7 +85,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <region> elements.
+     * Get the array of the <region> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#region
      *
      * @access public
@@ -106,7 +106,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <state> elements.
+     * Get the array of the <state> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#state
      *
      * @access public
@@ -127,7 +127,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <territory> elements.
+     * Get the array of the <territory> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#territory
      *
      * @access public
@@ -148,7 +148,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <county> elements.
+     * Get the array of the <county> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#county
      *
      * @access public
@@ -169,7 +169,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <city> elements.
+     * Get the array of the <city> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#city
      *
      * @access public
@@ -190,7 +190,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <citySection> elements.
+     * Get the array of the <citySection> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#citysection
      *
      * @access public
@@ -211,7 +211,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <island> elements.
+     * Get the array of the <island> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#island
      *
      * @access public
@@ -232,7 +232,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <area> elements.
+     * Get the array of the <area> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#area
      *
      * @access public
@@ -253,7 +253,7 @@ class HierarchicalGeographic extends BaseElement
     }
 
     /**
-     * Get the the array of the <extraterrestrialArea> elements.
+     * Get the array of the <extraterrestrialArea> elements.
      * @see https://www.loc.gov/standards/mods/userguide/subject.html#extraterrestrialarea
      *
      * @access public

@@ -22,7 +22,7 @@ trait AccessConditionReader
 {
 
     /**
-     * Get the the array of the <accessCondition> elements.
+     * Get the array of the <accessCondition> elements.
      * @see https://www.loc.gov/standards/mods/userguide/accesscondition.html
      *
      * @access public
@@ -85,7 +85,7 @@ trait AccessConditionReader
     }
 
     /**
-     * Get the the first matching <accessCondition> element.
+     * Get the first matching <accessCondition> element.
      * @see https://www.loc.gov/standards/mods/userguide/accesscondition.html
      *
      * @access public
@@ -100,7 +100,7 @@ trait AccessConditionReader
     }
 
     /**
-     * Get the the last matching <accessCondition> element.
+     * Get the last matching <accessCondition> element.
      * @see https://www.loc.gov/standards/mods/userguide/accesscondition.html
      *
      * @access public

@@ -21,7 +21,7 @@ trait TargetAudienceReader
 {
 
     /**
-     * Get the the array of the <targetAudience> elements.
+     * Get the array of the <targetAudience> elements.
      * @see https://www.loc.gov/standards/mods/userguide/targetaudience.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait TargetAudienceReader
     }
 
     /**
-     * Get the the first matching <targetAudience> element.
+     * Get the first matching <targetAudience> element.
      * @see https://www.loc.gov/standards/mods/userguide/targetaudience.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait TargetAudienceReader
     }
 
     /**
-     * Get the the last matching <targetAudience> element.
+     * Get the last matching <targetAudience> element.
      * @see https://www.loc.gov/standards/mods/userguide/targetaudience.html
      *
      * @access public

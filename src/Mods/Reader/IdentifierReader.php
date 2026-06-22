@@ -21,7 +21,7 @@ trait IdentifierReader
 {
 
     /**
-     * Get the the array of the <identifier> elements.
+     * Get the array of the <identifier> elements.
      * @see https://www.loc.gov/standards/mods/userguide/identifier.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait IdentifierReader
     }
 
     /**
-     * Get the the first matching <identifier> element.
+     * Get the first matching <identifier> element.
      * @see https://www.loc.gov/standards/mods/userguide/identifier.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait IdentifierReader
     }
 
     /**
-     * Get the the last matching <identifier> element.
+     * Get the last matching <identifier> element.
      * @see https://www.loc.gov/standards/mods/userguide/identifier.html
      *
      * @access public

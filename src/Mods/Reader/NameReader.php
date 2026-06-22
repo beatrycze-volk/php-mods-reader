@@ -21,7 +21,7 @@ trait NameReader
 {
 
     /**
-     * Get the the array of the <name> elements.
+     * Get the array of the <name> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html
      *
      * @access public
@@ -61,7 +61,7 @@ trait NameReader
     }
 
     /**
-     * Get the the first matching <name> element.
+     * Get the first matching <name> element.
      * @see https://www.loc.gov/standards/mods/userguide/name.html
      *
      * @access public
@@ -76,7 +76,7 @@ trait NameReader
     }
 
     /**
-     * Get the the last matching <name> element.
+     * Get the last matching <name> element.
      * @see https://www.loc.gov/standards/mods/userguide/name.html
      *
      * @access public

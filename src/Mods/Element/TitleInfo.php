@@ -147,7 +147,7 @@ class TitleInfo extends BaseElement
     }
 
     /**
-     * Get the the array of the <partName> elements.
+     * Get the array of the <partName> elements.
      * @see https://www.loc.gov/standards/mods/userguide/titleinfo.html#partname
      *
      * @access public

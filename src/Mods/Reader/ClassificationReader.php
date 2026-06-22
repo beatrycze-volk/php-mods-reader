@@ -20,7 +20,7 @@ use Slub\Mods\Element\Classification;
 trait ClassificationReader
 {
     /**
-     * Get the the array of the <classification> elements.
+     * Get the array of the <classification> elements.
      * @see https://www.loc.gov/standards/mods/userguide/classification.html
      *
      * @access public
@@ -60,7 +60,7 @@ trait ClassificationReader
     }
 
     /**
-     * Get the the first matching <classification> element.
+     * Get the first matching <classification> element.
      * @see https://www.loc.gov/standards/mods/userguide/classification.html
      *
      * @access public
@@ -75,7 +75,7 @@ trait ClassificationReader
     }
 
     /**
-     * Get the the last matching <classification> element.
+     * Get the last matching <classification> element.
      * @see https://www.loc.gov/standards/mods/userguide/classification.html
      *
      * @access public

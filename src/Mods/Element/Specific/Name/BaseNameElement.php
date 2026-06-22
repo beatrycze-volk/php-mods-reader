@@ -39,7 +39,7 @@ class BaseNameElement extends BaseElement
     }
 
     /**
-     * Get the the array of the <namePart> elements.
+     * Get the array of the <namePart> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#namepart
      *
      * @access public
@@ -60,7 +60,7 @@ class BaseNameElement extends BaseElement
     }
 
     /**
-     * Get the the array of the <nameIdentifier> elements.
+     * Get the array of the <nameIdentifier> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#nameidentifier
      *
      * @access public
@@ -81,7 +81,7 @@ class BaseNameElement extends BaseElement
     }
 
     /**
-     * Get the the array of the <displayForm> elements.
+     * Get the array of the <displayForm> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#displayform
      *
      * @access public
@@ -102,7 +102,7 @@ class BaseNameElement extends BaseElement
     }
 
     /**
-     * Get the the array of the <affiliation> elements.
+     * Get the array of the <affiliation> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#displayform
      *
      * @access public
@@ -123,7 +123,7 @@ class BaseNameElement extends BaseElement
     }
 
     /**
-     * Get the the array of the <role> elements.
+     * Get the array of the <role> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#role
      *
      * @access public
@@ -144,7 +144,7 @@ class BaseNameElement extends BaseElement
     }
 
     /**
-     * Get the the array of the <description> elements.
+     * Get the array of the <description> elements.
      * @see https://www.loc.gov/standards/mods/userguide/name.html#description
      *
      * @access public

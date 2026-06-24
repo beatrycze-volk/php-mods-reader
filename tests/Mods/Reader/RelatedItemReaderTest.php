@@ -96,7 +96,7 @@ class RelatedItemReaderTest extends ModsReaderTest
         self::assertEmpty($relatedItems);
     }
 
-    private static function assertRelatedItemForSerialDocument(RelatedItem $relatedItem)
+    private static function assertRelatedItemForSerialDocument(RelatedItem $relatedItem): void
     {
         self::assertNotEmpty($relatedItem->getType());
         self::assertEquals('preceding', $relatedItem->getType());

@@ -128,7 +128,7 @@ class AccessConditionReaderTest extends ModsReaderTest
         self::assertEmpty($accessConditions);
     }
 
-    private static function assertAccessConditionForBookDocument(AccessCondition $accessCondition)
+    private static function assertAccessConditionForBookDocument(AccessCondition $accessCondition): void
     {
         self::assertNotEmpty($accessCondition->getValue());
         self::assertEquals('Use of this public-domain resource is unrestricted.', $accessCondition->getValue());
@@ -138,7 +138,7 @@ class AccessConditionReaderTest extends ModsReaderTest
         self::assertEmpty($accessCondition->getXlinkHref());
     }
 
-    private static function assertAccessConditionForSerialDocument(AccessCondition $accessCondition)
+    private static function assertAccessConditionForSerialDocument(AccessCondition $accessCondition): void
     {
         self::assertNotEmpty($accessCondition->getValue());
         self::assertEquals('Open Access', $accessCondition->getValue());

@@ -198,7 +198,7 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertNull($identifier);
     }
 
-    private static function assertFirstIdentifierForBookDocument(Identifier $identifier)
+    private static function assertFirstIdentifierForBookDocument(Identifier $identifier): void
     {
         self::assertNotEmpty($identifier->getValue());
         self::assertEquals('0801486394 (pbk. : acid-free, recycled paper)', $identifier->getValue());
@@ -209,7 +209,7 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertFalse($identifier->isInvalid());
     }
 
-    private static function assertSecondIdentifierForBookDocument(Identifier $identifier)
+    private static function assertSecondIdentifierForBookDocument(Identifier $identifier): void
     {
         self::assertNotEmpty($identifier->getValue());
         self::assertEquals('99042030', $identifier->getValue());
@@ -220,7 +220,7 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertFalse($identifier->isInvalid());
     }
 
-    private static function assertFirstIdentifierForSerialDocument(Identifier $identifier)
+    private static function assertFirstIdentifierForSerialDocument(Identifier $identifier): void
     {
         self::assertNotEmpty($identifier->getValue());
         self::assertEquals('1704-8532', $identifier->getValue());
@@ -231,7 +231,7 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertFalse($identifier->isInvalid());
     }
 
-    private static function assertSecondIdentifierForSerialDocument(Identifier $identifier)
+    private static function assertSecondIdentifierForSerialDocument(Identifier $identifier): void
     {
         self::assertNotEmpty($identifier->getValue());
         self::assertEquals('1525-321X', $identifier->getValue());
@@ -242,7 +242,7 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertTrue($identifier->isInvalid());
     }
 
-    private static function assertThirdIdentifierForSerialDocument(Identifier $identifier)
+    private static function assertThirdIdentifierForSerialDocument(Identifier $identifier): void
     {
         self::assertNotEmpty($identifier->getValue());
         self::assertEquals('cn2002301668', $identifier->getValue());
@@ -253,7 +253,7 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertFalse($identifier->isInvalid());
     }
 
-    private static function assertFourthIdentifierForSerialDocument(Identifier $identifier)
+    private static function assertFourthIdentifierForSerialDocument(Identifier $identifier): void
     {
         self::assertNotEmpty($identifier->getValue());
         self::assertEquals('ocm51090366', $identifier->getValue());

@@ -120,7 +120,7 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertEmpty($originInfos);
     }
 
-    private static function assertFirstOriginInfoForBookDocument(OriginInfo $originInfo)
+    private static function assertFirstOriginInfoForBookDocument(OriginInfo $originInfo): void
     {
         self::assertNotEmpty($originInfo->getValue());
         self::assertNotEmpty($originInfo->getEventType());
@@ -147,7 +147,7 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertEquals('monographic', $issuances[0]->getValue());
     }
 
-    private static function assertSecondOriginInfoForBookDocument(OriginInfo $originInfo)
+    private static function assertSecondOriginInfoForBookDocument(OriginInfo $originInfo): void
     {
         self::assertNotEmpty($originInfo->getValue());
         self::assertNotEmpty($originInfo->getEventType());
@@ -171,7 +171,7 @@ class OriginInfoReaderTest extends ModsReaderTest
         self::assertEmpty($originInfo->getIssuances());
     }
 
-    private static function assertOriginInfoForSerialDocument(OriginInfo $originInfo)
+    private static function assertOriginInfoForSerialDocument(OriginInfo $originInfo): void
     {
         self::assertNotEmpty($originInfo->getValue());
         self::assertNotEmpty($originInfo->getEventType());

@@ -123,7 +123,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertEmpty($physicalDescriptions);
     }
 
-    private static function assertPhysicalDescriptionForBookDocument(PhysicalDescription $physicalDescription)
+    private static function assertPhysicalDescriptionForBookDocument(PhysicalDescription $physicalDescription): void
     {
         self::assertNotEmpty($physicalDescription->getValue());
 
@@ -140,7 +140,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertEmpty($physicalDescription->getNotes());
     }
 
-    private static function assertPhysicalDescriptionForSerialDocument(PhysicalDescription $physicalDescription)
+    private static function assertPhysicalDescriptionForSerialDocument(PhysicalDescription $physicalDescription): void
     {
         self::assertNotEmpty($physicalDescription->getValue());
         self::assertNotEmpty($physicalDescription->getForms());

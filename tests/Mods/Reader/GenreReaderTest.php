@@ -156,7 +156,7 @@ class GenreReaderTest extends ModsReaderTest
         self::assertEmpty($genres);
     }
 
-    private static function assertGenreForBookDocument(Genre $genre)
+    private static function assertGenreForBookDocument(Genre $genre): void
     {
         self::assertNotEmpty($genre->getValue());
         self::assertEquals('bibliography', $genre->getValue());
@@ -166,7 +166,7 @@ class GenreReaderTest extends ModsReaderTest
         self::assertEmpty($genre->getScript());
     }
 
-    private static function assertFirstGenreForSerialDocument(Genre $genre)
+    private static function assertFirstGenreForSerialDocument(Genre $genre): void
     {
         self::assertNotEmpty($genre->getValue());
         self::assertEquals('periodical', $genre->getValue());
@@ -176,7 +176,7 @@ class GenreReaderTest extends ModsReaderTest
         self::assertEmpty($genre->getTransliteration());
     }
 
-    private static function assertSecondGenreForSerialDocument(Genre $genre)
+    private static function assertSecondGenreForSerialDocument(Genre $genre): void
     {
         self::assertNotEmpty($genre->getValue());
         self::assertEquals('series', $genre->getValue());

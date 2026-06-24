@@ -117,7 +117,7 @@ class TableOfContentsReaderTest extends ModsReaderTest
         self::assertEmpty($tablesOfContents);
     }
 
-    private static function assertTableOfContentsForBookDocument(TableOfContents $tableOfContents)
+    private static function assertTableOfContentsForBookDocument(TableOfContents $tableOfContents): void
     {
         self::assertNotEmpty($tableOfContents->getValue());
         self::assertEquals('Bluegrass odyssey -- Hills of Tennessee -- Sassafrass -- Muddy river -- Take your shoes off Moses -- Let Smokey Mountain smoke get in your eyes -- Farewell party -- Faded love', $tableOfContents->getValue());

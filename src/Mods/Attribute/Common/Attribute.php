@@ -27,7 +27,7 @@ trait Attribute
      *
      * @return string
      */
-    protected function getStringAttribute($attribute): string
+    protected function getStringAttribute(string $attribute): string
     {
         if ($this->xml->attributes() != null) {
             $value = $this->xml->attributes()->$attribute;
@@ -48,7 +48,7 @@ trait Attribute
      *
      * @return int
      */
-    protected function getIntAttribute($attribute): int
+    protected function getIntAttribute(string $attribute): int
     {
         if ($this->xml->attributes() != null) {
             $value = $this->xml->attributes()->$attribute;

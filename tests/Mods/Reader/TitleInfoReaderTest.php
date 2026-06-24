@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\ModsReaderTest;
 
 /**
@@ -20,10 +21,8 @@ use Slub\Mods\ModsReaderTest;
 class TitleInfoReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
-    public function testGetTitleInfosForBookDocument()
+    #[Test]
+    public function getTitleInfosForBookDocument()
     {
         $titleInfos = $this->bookReader->getTitleInfos();
         self::assertNotEmpty($titleInfos);
@@ -33,10 +32,8 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('the making of the punditocracy', $titleInfos[0]->getSubTitle()->getValue());
     }
 
-    /**
-     * @test
-     */
-    public function testGetTitleInfosByQueryForBookDocument()
+    #[Test]
+    public function getTitleInfosByQueryForBookDocument()
     {
         $titleInfos = $this->bookReader->getTitleInfos('[@xml:lang="fr"]');
         self::assertNotEmpty($titleInfos);
@@ -52,10 +49,8 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('la création de la punditocratie', $titleInfos[0]->getSubTitle()->getValue());
     }
 
-    /**
-     * @test
-     */
-    public function testGetTitleInfosForSerialDocument()
+    #[Test]
+    public function getTitleInfosForSerialDocument()
     {
         $titleInfos = $this->serialReader->getTitleInfos();
         self::assertNotEmpty($titleInfos);
@@ -67,10 +62,8 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('the electronic journal of academic and special librarianship', $titleInfos[0]->getSubTitle()->getValue());
     }
 
-    /**
-     * @test
-     */
-    public function testGetTitleInfosByQueryForSerialDocument()
+    #[Test]
+    public function getTitleInfosByQueryForSerialDocument()
     {
         $titleInfos = $this->serialReader->getTitleInfos('[@type="abbreviated"]');
         self::assertNotEmpty($titleInfos);
@@ -81,10 +74,8 @@ class TitleInfoReaderTest extends ModsReaderTest
         self::assertEquals('(Athabasca)', $titleInfos[0]->getSubTitle()->getValue());
     }
 
-    /**
-     * @test
-     */
-    public function testGetNoTitleInfosByQueryForSerialDocument()
+    #[Test]
+    public function getNoTitleInfosByQueryForSerialDocument()
     {
         $titleInfos = $this->serialReader->getTitleInfos('[@type="uniform"]');
         self::assertEmpty($titleInfos);

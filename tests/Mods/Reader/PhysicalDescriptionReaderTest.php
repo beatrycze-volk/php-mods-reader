@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\PhysicalDescription;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class PhysicalDescriptionReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPhysicalDescriptionsForBookDocument()
     {
         $physicalDescriptions = $this->bookReader->getPhysicalDescriptions();
@@ -32,36 +31,28 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertPhysicalDescriptionForBookDocument($physicalDescriptions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPhysicalDescriptionForBookDocument()
     {
         $physicalDescription = $this->bookReader->getPhysicalDescription(0);
         self::assertPhysicalDescriptionForBookDocument($physicalDescription);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstPhysicalDescriptionForBookDocument()
     {
         $physicalDescription = $this->bookReader->getFirstPhysicalDescription();
         self::assertPhysicalDescriptionForBookDocument($physicalDescription);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastPhysicalDescriptionForBookDocument()
     {
         $physicalDescription = $this->bookReader->getLastPhysicalDescription();
         self::assertPhysicalDescriptionForBookDocument($physicalDescription);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function gtPhysicalDescriptionsByParametersForBookDocument()
     {
         $physicalDescriptions = $this->bookReader->getPhysicalDescriptionsByParameters('./mods:form', ['authority' => 'marcform'], 'print');
@@ -70,9 +61,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertPhysicalDescriptionForBookDocument($physicalDescriptions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPhysicalDescriptionsByQueryForBookDocument()
     {
         $physicalDescriptions = $this->bookReader->getPhysicalDescriptions('[./mods:form[@authority="marcform"]="print"]');
@@ -81,45 +70,35 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertPhysicalDescriptionForBookDocument($physicalDescriptions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoPhysicalDescriptionsByQueryForBookDocument()
     {
         $physicalDescriptions = $this->bookReader->getPhysicalDescriptions('[./mods:form[@authority="marcform"]="electronic"]');
         self::assertEmpty($physicalDescriptions);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoPhysicalDescriptionByQueryForBookDocument()
     {
         $physicalDescription = $this->bookReader->getPhysicalDescription(0, '[./mods:form[@authority="marcform"]="electronic"]');
         self::assertNull($physicalDescription);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstPhysicalDescriptionByQueryForBookDocument()
     {
         $physicalDescription = $this->bookReader->getFirstPhysicalDescription('[./mods:form[@authority="marcform"]="electronic"]');
         self::assertNull($physicalDescription);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastPhysicalDescriptionByQueryForBookDocument()
     {
         $physicalDescription = $this->bookReader->getLastPhysicalDescription('[./mods:form[@authority="marcform"]="electronic"]');
         self::assertNull($physicalDescription);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPhysicalDescriptionsForSerialDocument()
     {
         $physicalDescriptions = $this->serialReader->getPhysicalDescriptions();
@@ -128,9 +107,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertPhysicalDescriptionForSerialDocument($physicalDescriptions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getPhysicalDescriptionsByQueryForSerialDocument()
     {
         $physicalDescriptions = $this->serialReader->getPhysicalDescriptions('[./mods:form[@authority="marcform"]="electronic"]');
@@ -139,9 +116,7 @@ class PhysicalDescriptionReaderTest extends ModsReaderTest
         self::assertPhysicalDescriptionForSerialDocument($physicalDescriptions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoPhysicalDescriptionsByQueryForSerialDocument()
     {
         $physicalDescriptions = $this->serialReader->getPhysicalDescriptions('[./mods:form[@authority="marcform"]="print"]');

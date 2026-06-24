@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Identifier;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class IdentifierReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifiersForBookDocument()
     {
         $identifiers = $this->bookReader->getIdentifiers();
@@ -32,36 +31,28 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertFirstIdentifierForBookDocument($identifiers[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifierForBookDocument()
     {
         $identifier = $this->bookReader->getIdentifier(0);
         self::assertFirstIdentifierForBookDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstIdentifierForBookDocument()
     {
         $identifier = $this->bookReader->getFirstIdentifier();
         self::assertFirstIdentifierForBookDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastIdentifierForBookDocument()
     {
         $identifier = $this->bookReader->getLastIdentifier();
         self::assertSecondIdentifierForBookDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifiersByQueryForBookDocument()
     {
         $identifiers = $this->bookReader->getIdentifiers('[@type="lccn"]');
@@ -70,72 +61,56 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertSecondIdentifierForBookDocument($identifiers[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifierByQueryForBookDocument()
     {
         $identifier = $this->bookReader->getIdentifier(0, '[@type="lccn"]');
         self::assertSecondIdentifierForBookDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstIdentifierByQueryForBookDocument()
     {
         $identifier = $this->bookReader->getFirstIdentifier('[@type="lccn"]');
         self::assertSecondIdentifierForBookDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastIdentifierByQueryForBookDocument()
     {
         $identifier = $this->bookReader->getLastIdentifier('[@type="lccn"]');
         self::assertSecondIdentifierForBookDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoIdentifiersByQueryForBookDocument()
     {
         $identifiers = $this->bookReader->getIdentifiers('[@type="xyz"]');
         self::assertEmpty($identifiers);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoIdentifierByQueryForBookDocument()
     {
         $identifier = $this->bookReader->getIdentifier(5, '[@type="lccn"]');
         self::assertNull($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstIdentifierByQueryForBookDocument()
     {
         $identifier = $this->bookReader->getFirstIdentifier('[@type="xyz"]');
         self::assertNull($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastIdentifierByQueryForBookDocument()
     {
         $identifier = $this->bookReader->getLastIdentifier('[@type="xyz"]');
         self::assertNull($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifiersForSerialDocument()
     {
         $identifiers = $this->serialReader->getIdentifiers();
@@ -144,36 +119,28 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertFirstIdentifierForSerialDocument($identifiers[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifierForSerialDocument()
     {
         $identifier = $this->serialReader->getIdentifier(2);
         self::assertThirdIdentifierForSerialDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstIdentifierForSerialDocument()
     {
         $identifier = $this->serialReader->getFirstIdentifier();
         self::assertFirstIdentifierForSerialDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastIdentifierForSerialDocument()
     {
         $identifier = $this->serialReader->getLastIdentifier();
         self::assertFourthIdentifierForSerialDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifiersByQueryForSerialDocument()
     {
         $identifiers = $this->serialReader->getIdentifiers('[@type="issn"]');
@@ -182,63 +149,49 @@ class IdentifierReaderTest extends ModsReaderTest
         self::assertSecondIdentifierForSerialDocument($identifiers[1]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getIdentifierByQueryForSerialDocument()
     {
         $identifier = $this->serialReader->getIdentifier(0, '[@type="issn"]');
         self::assertFirstIdentifierForSerialDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstIdentifierByQueryForSerialDocument()
     {
         $identifier = $this->serialReader->getFirstIdentifier('[@type="lccn"]');
         self::assertThirdIdentifierForSerialDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastIdentifierByQueryForSerialDocument()
     {
         $identifier = $this->serialReader->getLastIdentifier('[@type="lccn"]');
         self::assertThirdIdentifierForSerialDocument($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoIdentifiersByQueryForSerialDocument()
     {
         $identifiers = $this->serialReader->getIdentifiers('[@type="xyz"]');
         self::assertEmpty($identifiers);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoIdentifierByQueryForSerialDocument()
     {
         $identifier = $this->serialReader->getIdentifier(2, '[@type="xyz"]');
         self::assertNull($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstIdentifierByQueryForSerialDocument()
     {
         $identifier = $this->serialReader->getFirstIdentifier('[@type="xyz"]');
         self::assertNull($identifier);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastIdentifierByQueryForSerialDocument()
     {
         $identifier = $this->serialReader->getLastIdentifier('[@type="xyz"]');

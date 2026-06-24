@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Classification;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class ClassificationReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getClassificationsForBookDocument()
     {
         $classifications = $this->bookReader->getClassifications();
@@ -32,36 +31,28 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertFirstClassificationForBookDocument($classifications[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getClassificationForBookDocument()
     {
         $classification = $this->bookReader->getClassification(0);
         self::assertFirstClassificationForBookDocument($classification);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstClassificationForBookDocument()
     {
         $classification = $this->bookReader->getFirstClassification();
         self::assertFirstClassificationForBookDocument($classification);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastClassificationForBookDocument()
     {
         $classification = $this->bookReader->getLastClassification();
         self::assertSecondClassificationForBookDocument($classification);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getClassificationsByQueryForBookDocument()
     {
         $classifications = $this->bookReader->getClassifications('[@authority="ddc"]');
@@ -70,27 +61,21 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertSecondClassificationForBookDocument($classifications[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoClassificationsByQueryForBookDocument()
     {
         $classifications = $this->bookReader->getClassifications('[@generator="xyz"]');
         self::assertEmpty($classifications);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoClassificationByQueryForBookDocument()
     {
         $classification = $this->bookReader->getClassification(1, '[@generator="xyz"]');
         self::assertNull($classification);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstClassificationByQueryForBookDocument()
     {
         $classification = $this->bookReader->getFirstClassification('[@generator="xyz"]');
@@ -100,18 +85,14 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertNull($lastClassification);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastClassificationByQueryForBookDocument()
     {
         $classification = $this->bookReader->getLastClassification('[@generator="xyz"]');
         self::assertNull($classification);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getClassificationsForSerialDocument()
     {
         $classifications = $this->serialReader->getClassifications();
@@ -120,9 +101,7 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertClassificationForSerialDocument($classifications[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getClassificationsByQueryForSerialDocument()
     {
         $classifications = $this->serialReader->getClassifications('[@authority="ddc"]');
@@ -131,9 +110,7 @@ class ClassificationReaderTest extends ModsReaderTest
         self::assertClassificationForSerialDocument($classifications[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoClassificationsByQueryForSerialDocument()
     {
         $classifications = $this->serialReader->getClassifications('[@edition="22"]');

@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Language;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class LanguageReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLanguagesForBookDocument()
     {
         $languages = $this->bookReader->getLanguages();
@@ -32,36 +31,28 @@ class LanguageReaderTest extends ModsReaderTest
         self::assertFirstLanguageForBookDocument($languages[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLanguageForBookDocument()
     {
         $language = $this->bookReader->getLanguage(0);
         self::assertFirstLanguageForBookDocument($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstLanguageForBookDocument()
     {
         $language = $this->bookReader->getFirstLanguage();
         self::assertFirstLanguageForBookDocument($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastLanguageForBookDocument()
     {
         $language = $this->bookReader->getLastLanguage();
         self::assertSecondLanguageForBookDocument($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLanguagesByQueryForBookDocument()
     {
         $languages = $this->bookReader->getLanguages('[@objectPart="summary"]');
@@ -70,72 +61,56 @@ class LanguageReaderTest extends ModsReaderTest
         self::assertSecondLanguageForBookDocument($languages[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLanguageByQueryForBookDocument()
     {
         $language = $this->bookReader->getLanguage(0, '[@objectPart="summary"]');
         self::assertSecondLanguageForBookDocument($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstLanguageByQueryForBookDocument()
     {
         $language = $this->bookReader->getFirstLanguage('[@objectPart="summary"]');
         self::assertSecondLanguageForBookDocument($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastLanguageByQueryForBookDocument()
     {
         $language = $this->bookReader->getLastLanguage('[@objectPart="summary"]');
         self::assertSecondLanguageForBookDocument($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLanguagesByQueryForBookDocument()
     {
         $languages = $this->bookReader->getLanguages('[@objectPart="abstract"]');
         self::assertEmpty($languages);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLanguageByQueryForBookDocument()
     {
         $language = $this->bookReader->getLanguage(0, '[@objectPart="abstract"]');
         self::assertNull($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstLanguageByQueryForBookDocument()
     {
         $language = $this->bookReader->getFirstLanguage('[@objectPart="abstract"]');
         self::assertNull($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastLanguageByQueryForBookDocument()
     {
         $language = $this->bookReader->getLastLanguage('[@objectPart="abstract"]');
         self::assertNull($language);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLanguagesForSerialDocument()
     {
         $languages = $this->serialReader->getLanguages();
@@ -144,9 +119,7 @@ class LanguageReaderTest extends ModsReaderTest
         self::assertLanguageForSerialDocument($languages[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLanguagesByQueryForSerialDocument()
     {
         $languages = $this->serialReader->getLanguages('[./mods:languageTerm[@type="code"]]');
@@ -155,9 +128,7 @@ class LanguageReaderTest extends ModsReaderTest
         self::assertLanguageForSerialDocument($languages[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLanguagesByQueryForSerialDocument()
     {
         $languages = $this->serialReader->getLanguages('[@objectPart="summary"]');

@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Name;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class NameReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNamesForBookDocument()
     {
         $names = $this->bookReader->getNames();
@@ -32,36 +31,28 @@ class NameReaderTest extends ModsReaderTest
         self::assertFirstNameForBookDocument($names[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNameForBookDocument()
     {
         $name = $this->bookReader->getName(1);
         self::assertSecondNameForBookDocument($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstNameForBookDocument()
     {
         $name = $this->bookReader->getFirstName();
         self::assertFirstNameForBookDocument($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastNameForBookDocument()
     {
         $name = $this->bookReader->getLastName();
         self::assertSecondNameForBookDocument($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNamesByQueryForBookDocument()
     {
         $names = $this->bookReader->getNames('[@type="personal" and not(@usage="primary")]');
@@ -70,72 +61,56 @@ class NameReaderTest extends ModsReaderTest
         self::assertSecondNameForBookDocument($names[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNameByQueryForBookDocument()
     {
         $name = $this->bookReader->getName(0, '[@type="personal" and not(@usage="primary")]');
         self::assertSecondNameForBookDocument($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstNameByQueryForBookDocument()
     {
         $name = $this->bookReader->getFirstName('[@type="personal" and not(@usage="primary")]');
         self::assertSecondNameForBookDocument($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastNameByQueryForBookDocument()
     {
         $name = $this->bookReader->getLastName('[@type="personal" and not(@usage="primary")]');
         self::assertSecondNameForBookDocument($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoNamesByQueryForBookDocument()
     {
         $names = $this->bookReader->getNames('[@type="corporate"]');
         self::assertEmpty($names);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoNameByQueryForBookDocument()
     {
         $name = $this->bookReader->getName(3, '[@type="corporate"]');
         self::assertNull($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstNameByQueryForBookDocument()
     {
         $name = $this->bookReader->getFirstName('[@type="corporate"]');
         self::assertNull($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastNameByQueryForBookDocument()
     {
         $name = $this->bookReader->getLastName('[@type="corporate"]');
         self::assertNull($name);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNamesForSerialDocument()
     {
         $names = $this->serialReader->getNames();
@@ -144,9 +119,7 @@ class NameReaderTest extends ModsReaderTest
         self::assertNameForSerialDocument($names[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNamesByQueryForSerialDocument()
     {
         $names = $this->serialReader->getNames('[@type="corporate"]');
@@ -155,9 +128,7 @@ class NameReaderTest extends ModsReaderTest
         self::assertNameForSerialDocument($names[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoNamesByQueryForSerialDocument()
     {
         $names = $this->serialReader->getNames('[@type="personal"]');

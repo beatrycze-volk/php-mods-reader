@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Genre;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class GenreReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getGenresForBookDocument()
     {
         $genres = $this->bookReader->getGenres();
@@ -32,36 +31,28 @@ class GenreReaderTest extends ModsReaderTest
         self::assertGenreForBookDocument($genres[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getGenreForBookDocument()
     {
         $genre = $this->bookReader->getGenre(0);
         self::assertGenreForBookDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstGenreForBookDocument()
     {
         $genre = $this->bookReader->getFirstGenre();
         self::assertGenreForBookDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastGenreForBookDocument()
     {
         $genre = $this->bookReader->getLastGenre();
         self::assertGenreForBookDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getGenresByQueryForBookDocument()
     {
         $genres = $this->bookReader->getGenres('[@authority="marcgt"]');
@@ -70,72 +61,56 @@ class GenreReaderTest extends ModsReaderTest
         self::assertGenreForBookDocument($genres[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getGenreByQueryForBookDocument()
     {
         $genre = $this->bookReader->getGenre(0, '[@authority="marcgt"]');
         self::assertGenreForBookDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstGenreByQueryForBookDocument()
     {
         $genre = $this->bookReader->getFirstGenre('[@authority="marcgt"]');
         self::assertGenreForBookDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastGenreByQueryForBookDocument()
     {
         $genre = $this->bookReader->getLastGenre('[@authority="marcgt"]');
         self::assertGenreForBookDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoGenresByQueryForBookDocument()
     {
         $genres = $this->bookReader->getGenres('[@authority="merc"]');
         self::assertEmpty($genres);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoGenreByQueryForBookDocument()
     {
         $genre = $this->bookReader->getGenre(0, '[@authority="merc"]');
         self::assertNull($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstGenreByQueryForBookDocument()
     {
         $genre = $this->bookReader->getFirstGenre('[@authority="merc"]');
         self::assertNull($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastGenreByQueryForBookDocument()
     {
         $genre = $this->bookReader->getLastGenre('[@authority="merc"]');
         self::assertNull($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getGenresForSerialDocument()
     {
         $genres = $this->serialReader->getGenres();
@@ -144,36 +119,28 @@ class GenreReaderTest extends ModsReaderTest
         self::assertFirstGenreForSerialDocument($genres[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getGenreForSerialDocument()
     {
         $genre = $this->serialReader->getGenre(0);
         self::assertFirstGenreForSerialDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstGenreForSerialDocument()
     {
         $genre = $this->serialReader->getFirstGenre();
         self::assertFirstGenreForSerialDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastGenreForSerialDocument()
     {
         $genre = $this->serialReader->getLastGenre();
         self::assertSecondGenreForSerialDocument($genre);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getGenresByQueryForSerialDocument()
     {
         $genres = $this->serialReader->getGenres('[@usage="primary"]');
@@ -182,9 +149,7 @@ class GenreReaderTest extends ModsReaderTest
         self::assertFirstGenreForSerialDocument($genres[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoGenresByQueryForSerialDocument()
     {
         $genres = $this->serialReader->getGenres('[@type="xyz"]');

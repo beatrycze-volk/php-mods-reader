@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\AccessCondition;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class AccessConditionReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAccessConditionsForBookDocument()
     {
         $accessConditions = $this->bookReader->getAccessConditions();
@@ -32,36 +31,28 @@ class AccessConditionReaderTest extends ModsReaderTest
         self::assertAccessConditionForBookDocument($accessConditions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAccessConditionForBookDocument()
     {
         $accessCondition = $this->bookReader->getAccessCondition(0);
         self::assertAccessConditionForBookDocument($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstAccessConditionForBookDocument()
     {
         $accessCondition = $this->bookReader->getFirstAccessCondition();
         self::assertAccessConditionForBookDocument($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastAccessConditionForBookDocument()
     {
         $accessCondition = $this->bookReader->getLastAccessCondition();
         self::assertAccessConditionForBookDocument($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAccessConditionsByQueryForBookDocument()
     {
         $accessConditions = $this->bookReader->getAccessConditions('[@type="use and reproduction"]');
@@ -70,63 +61,49 @@ class AccessConditionReaderTest extends ModsReaderTest
         self::assertAccessConditionForBookDocument($accessConditions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstAccessConditionByQueryForBookDocument()
     {
         $accessCondition = $this->bookReader->getFirstAccessCondition('[@type="use and reproduction"]');
         self::assertAccessConditionForBookDocument($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastAccessConditionByQueryForBookDocument()
     {
         $accessCondition = $this->bookReader->getLastAccessCondition('[@type="use and reproduction"]');
         self::assertAccessConditionForBookDocument($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoAccessConditionsByQueryForBookDocument()
     {
         $accessConditions = $this->bookReader->getAccessConditions('[@type="restriction on access"]');
         self::assertEmpty($accessConditions);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoAccessConditionByQueryForBookDocument()
     {
         $accessCondition = $this->bookReader->getAccessCondition(1, '[@type="restriction on access"]');
         self::assertNull($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstAccessConditionsByQueryForBookDocument()
     {
         $accessCondition = $this->bookReader->getFirstAccessCondition('[@type="restriction on access"]');
         self::assertNull($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastAccessConditionsByQueryForBookDocument()
     {
         $accessCondition = $this->bookReader->getLastAccessCondition('[@type="restriction on access"]');
         self::assertNull($accessCondition);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAccessConditionsForSerialDocument()
     {
         $accessConditions = $this->serialReader->getAccessConditions();
@@ -135,9 +112,7 @@ class AccessConditionReaderTest extends ModsReaderTest
         self::assertAccessConditionForSerialDocument($accessConditions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAccessConditionsByQueryForSerialDocument()
     {
         $accessConditions = $this->serialReader->getAccessConditions('[@type="restriction on access"]');
@@ -146,9 +121,7 @@ class AccessConditionReaderTest extends ModsReaderTest
         self::assertAccessConditionForSerialDocument($accessConditions[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoAccessConditionsByQueryForSerialDocument()
     {
         $accessConditions = $this->serialReader->getAccessConditions('[@type="use and reproduction"]');

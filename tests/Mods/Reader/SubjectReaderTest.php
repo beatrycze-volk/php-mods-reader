@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Subject;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class SubjectReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getSubjectsForBookDocument()
     {
         $subjects = $this->bookReader->getSubjects();
@@ -32,36 +31,28 @@ class SubjectReaderTest extends ModsReaderTest
         self::assertFirstSubjectForBookDocument($subjects[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getSubjectForBookDocument()
     {
         $subjects = $this->bookReader->getSubject(1);
         self::assertSecondSubjectForBookDocument($subjects);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstSubjectForBookDocument()
     {
         $subjects = $this->bookReader->getFirstSubject();
         self::assertFirstSubjectForBookDocument($subjects);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastSubjectForBookDocument()
     {
         $subjects = $this->bookReader->getLastSubject();
         self::assertEightSubjectForBookDocument($subjects);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getSubjectsByQueryForBookDocument()
     {
         $subjects = $this->bookReader->getSubjects('[./mods:topic="Mass media"]');
@@ -70,72 +61,56 @@ class SubjectReaderTest extends ModsReaderTest
         self::assertFourthSubjectForBookDocument($subjects[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getSubjectByQueryForBookDocument()
     {
         $subject = $this->bookReader->getSubject(0, '[./mods:topic="Mass media"]');
         self::assertFourthSubjectForBookDocument($subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstSubjectByQueryForBookDocument()
     {
         $subject = $this->bookReader->getFirstSubject('[./mods:topic="Mass media"]');
         self::assertFourthSubjectForBookDocument($subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastSubjectByQueryForBookDocument()
     {
         $subject = $this->bookReader->getLastSubject('[./mods:topic="Mass media"]');
         self::assertFourthSubjectForBookDocument($subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoSubjectsByQueryForBookDocument()
     {
         $subjects = $this->bookReader->getSubjects('[./mods:topic="Unknown"]');
         self::assertEmpty($subjects);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoSubjectByQueryForBookDocument()
     {
         $subject = $this->bookReader->getSubject(5, '[./mods:topic="Unknown"]');
         self::assertNull($subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstSubjectByQueryForBookDocument()
     {
         $subject = $this->bookReader->getFirstSubject(5, '[./mods:topic="Unknown"]');
         self::assertNull($subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastSubjectByQueryForBookDocument()
     {
         $subject = $this->bookReader->getLastSubject('[./mods:topic="Unknown"]');
         self::assertNull($subject);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getSubjectsForSerialDocument()
     {
         $subjects = $this->serialReader->getSubjects();
@@ -153,9 +128,7 @@ class SubjectReaderTest extends ModsReaderTest
         */
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getSubjectsByQueryForSerialDocument()
     {
         $subjects = $this->serialReader->getSubjects('[./mods:genre="Directories"]');
@@ -168,9 +141,7 @@ class SubjectReaderTest extends ModsReaderTest
         self::assertEquals('Directories', $subjects[0]->getGenres()[0]->getValue());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoSubjectsByQueryForSerialDocument()
     {
         $subjects = $this->serialReader->getSubjects('[./mods:topic="Unknown"]');

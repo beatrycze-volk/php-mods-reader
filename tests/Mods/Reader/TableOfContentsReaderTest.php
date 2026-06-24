@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\TableOfContents;
 use Slub\Mods\ModsReaderTest;
 
@@ -21,9 +22,7 @@ use Slub\Mods\ModsReaderTest;
 class TableOfContentsReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTablesOfContentsForBookDocument()
     {
         $tablesOfContents = $this->bookReader->getTablesOfContents();
@@ -32,36 +31,28 @@ class TableOfContentsReaderTest extends ModsReaderTest
         self::assertTableOfContentsForBookDocument($tablesOfContents[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTableOfContentsForBookDocument()
     {
         $tableOfContents = $this->bookReader->getTableOfContents(0);
         self::assertTableOfContentsForBookDocument($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstTableOfContentsForBookDocument()
     {
         $tableOfContents = $this->bookReader->getFirstTableOfContents();
         self::assertTableOfContentsForBookDocument($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastTableOfContentsForBookDocument()
     {
         $tableOfContents = $this->bookReader->getLastTableOfContents();
         self::assertTableOfContentsForBookDocument($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTablesOfContentsByQueryForBookDocument()
     {
         $tablesOfContents = $this->bookReader->getTablesOfContents('[@displayLabel="Chapters"]');
@@ -70,72 +61,56 @@ class TableOfContentsReaderTest extends ModsReaderTest
         self::assertTableOfContentsForBookDocument($tablesOfContents[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getTableOfContentsByQueryForBookDocument()
     {
         $tableOfContents = $this->bookReader->getTableOfContents(0, '[@displayLabel="Chapters"]');
         self::assertTableOfContentsForBookDocument($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstTableOfContentsByQueryForBookDocument()
     {
         $tableOfContents = $this->bookReader->getFirstTableOfContents('[@displayLabel="Chapters"]');
         self::assertTableOfContentsForBookDocument($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastTableOfContentsByQueryForBookDocument()
     {
         $tableOfContents = $this->bookReader->getLastTableOfContents('[@displayLabel="Chapters"]');
         self::assertTableOfContentsForBookDocument($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoTablesOfContentsByQueryForBookDocument()
     {
         $tablesOfContents = $this->bookReader->getTablesOfContents('[@displayLabel="Pages"]');
         self::assertEmpty($tablesOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoTableOfContentsByQueryForBookDocument()
     {
         $tableOfContents = $this->bookReader->getTableOfContents(0, '[@displayLabel="Pages"]');
         self::assertNull($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstTableOfContentsByQueryForBookDocument()
     {
         $tableOfContents = $this->bookReader->getFirstTableOfContents('[@displayLabel="Pages"]');
         self::assertNull($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastTableOfContentsByQueryForBookDocument()
     {
         $tableOfContents = $this->bookReader->getLastTableOfContents('[@displayLabel="Pages"]');
         self::assertNull($tableOfContents);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoTablesOfContentsForSerialDocument()
     {
         $tablesOfContents = $this->serialReader->getTablesOfContents();

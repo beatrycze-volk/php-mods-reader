@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\Element\Location;
 use Slub\Mods\Exception\IncorrectValueInAttributeException;
 use Slub\Mods\ModsReaderTest;
@@ -22,9 +23,7 @@ use Slub\Mods\ModsReaderTest;
 class LocationReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLocationsForBookDocument()
     {
         $locations = $this->bookReader->getLocations();
@@ -33,36 +32,28 @@ class LocationReaderTest extends ModsReaderTest
         self::assertFirstLocationForBookDocument($locations[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLocationForBookDocument()
     {
         $location = $this->bookReader->getLocation(1);
         self::assertSecondLocationForBookDocument($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getFirstLocationForBookDocument()
     {
         $location = $this->bookReader->getFirstLocation();
         self::assertFirstLocationForBookDocument($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastLocationForBookDocument()
     {
         $location = $this->bookReader->getLastLocation();
         self::assertSecondLocationForBookDocument($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLocationsByQueryForBookDocument()
     {
         $locations = $this->bookReader->getLocations('[@displayLabel="links"]');
@@ -74,72 +65,56 @@ class LocationReaderTest extends ModsReaderTest
         $locations[0]->getUrls()[3]->getAccess();
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLocationByQueryForBookDocument()
     {
         $location = $this->bookReader->getLocation(0, '[@displayLabel="links"]');
         self::assertSecondLocationForBookDocument($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function testGetFirstLocationByQueryForBookDocument()
     {
         $location = $this->bookReader->getFirstLocation('[@displayLabel="links"]');
         self::assertSecondLocationForBookDocument($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLastLocationForByQueryBookDocument()
     {
         $location = $this->bookReader->getLastLocation('[@displayLabel="links"]');
         self::assertSecondLocationForBookDocument($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLocationsByQueryForBookDocument()
     {
         $locations = $this->bookReader->getLocations('[@displayLabel="random"]');
         self::assertEmpty($locations);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLocationByQueryForBookDocument()
     {
         $location = $this->bookReader->getLocation(6, '[@displayLabel="links"]');
         self::assertNull($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoFirstLocationByQueryForBookDocument()
     {
         $location = $this->bookReader->getFirstLocation('[@displayLabel="random"]');
         self::assertNull($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLastLocationByQueryForBookDocument()
     {
         $location = $this->bookReader->getLastLocation('[@displayLabel="random"]');
         self::assertNull($location);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLocationsForSerialDocument()
     {
         $locations = $this->serialReader->getLocations();
@@ -148,9 +123,7 @@ class LocationReaderTest extends ModsReaderTest
         self::assertLocationForSerialDocument($locations[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getLocationsByQueryForSerialDocument()
     {
         $locations = $this->serialReader->getLocations('[./mods:url[@usage="primaryDisplay"]]');
@@ -159,9 +132,7 @@ class LocationReaderTest extends ModsReaderTest
         self::assertLocationForSerialDocument($locations[0]);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoLocationsByQueryForSerialDocument()
     {
         $locations = $this->serialReader->getLocations('[@usage="rad"]');

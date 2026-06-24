@@ -12,6 +12,7 @@
 
 namespace Slub\Mods\Reader;
 
+use PHPUnit\Framework\Attributes\Test;
 use Slub\Mods\ModsReaderTest;
 
 /**
@@ -20,9 +21,7 @@ use Slub\Mods\ModsReaderTest;
 class AbstractReaderTest extends ModsReaderTest
 {
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAbstractForBookDocument()
     {
         $abstract = $this->bookReader->getAbstract();
@@ -34,9 +33,7 @@ class AbstractReaderTest extends ModsReaderTest
         self::assertTrue($abstract->isShareable());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAbstractByQueryForBookDocument()
     {
         $abstract = $this->bookReader->getAbstract('[@displayLabel="Content description"]');
@@ -48,18 +45,14 @@ class AbstractReaderTest extends ModsReaderTest
         self::assertTrue($abstract->isShareable());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoAbstractByQueryForBookDocument()
     {
         $abstract = $this->bookReader->getAbstract('[@displayLabel="Random"]');
         self::assertNull($abstract);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAbstractForSerialDocument()
     {
         $abstract = $this->serialReader->getAbstract();
@@ -70,9 +63,7 @@ class AbstractReaderTest extends ModsReaderTest
         self::assertFalse($abstract->isShareable());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getAbstractByQueryForSerialDocument()
     {
         $abstract = $this->serialReader->getAbstract('[@shareable="no"]');
@@ -83,9 +74,7 @@ class AbstractReaderTest extends ModsReaderTest
         self::assertFalse($abstract->isShareable());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function getNoAbstractByQueryForSerialDocument()
     {
         $abstract = $this->serialReader->getAbstract('[@shareable="yes"]');

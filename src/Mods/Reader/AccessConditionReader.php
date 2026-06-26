@@ -33,12 +33,7 @@ trait AccessConditionReader
      */
     public function getAccessConditions(string $query = ''): array
     {
-        $accessConditions = [];
-        $values = $this->getValues('./mods:accessCondition' . $query);
-        foreach ($values as $value) {
-            $accessConditions[] = new AccessCondition($value);
-        }
-        return $accessConditions;
+        return $this->getAccessConditionElements('./mods:accessCondition' . $query);
     }
 
     /**
@@ -55,13 +50,8 @@ trait AccessConditionReader
      */
     public function getAccessConditionsByParameters(string $query = '', array $attributes = [], string $value = ''): array
     {
-        $accessConditions = [];
         $query = new Query('./mods:accessCondition', $query, $attributes, $value);
-        $values = $this->getValues($query->getXPath());
-        foreach ($values as $value) {
-            $accessConditions[] = new AccessCondition($value);
-        }
-        return $accessConditions;
+        return $this->getAccessConditionElements($query->getXPath());
     }
 
     /**
@@ -117,5 +107,25 @@ trait AccessConditionReader
             return $elements[$count - 1];
         }
         return null;
+    }
+
+    /**
+     * Get the array of the <accessCondition> elements.
+     * @see https://www.loc.gov/standards/mods/userguide/accesscondition.html
+     *
+     * @access private
+     *
+     * @param string $xpath The XPath query for metadata search
+     *
+     * @return AccessCondition[]
+     */
+    private function getAccessConditionElements(string $xpath): array
+    {
+        $accessConditions = [];
+        $values = $this->getValues($xpath);
+        foreach ($values as $value) {
+            $accessConditions[] = new AccessCondition($value);
+        }
+        return $accessConditions;
     }
 }

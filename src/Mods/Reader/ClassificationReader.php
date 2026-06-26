@@ -13,6 +13,7 @@
 namespace Slub\Mods\Reader;
 
 use Slub\Mods\Element\Classification;
+use Slub\Mods\Utility\Query;
 
 /**
  * Trait for reading Classification element
@@ -31,12 +32,25 @@ trait ClassificationReader
      */
     public function getClassifications(string $query = ''): array
     {
-        $classifications = [];
-        $values = $this->getValues('./mods:classification' . $query);
-        foreach ($values as $value) {
-            $classifications[] = new Classification($value);
-        }
-        return $classifications;
+        return $this->getClassificationElements('./mods:classification' . $query);
+    }
+
+    /**
+     * Get the array of the <classification> elements by parameters.
+     * @see https://www.loc.gov/standards/mods/userguide/classification.html
+     *
+     * @access public
+     *
+     * @param string $query The XPath query for metadata search
+     * @param array $attributes The array of attributes ['attribute' => 'value']
+     * @param string $value The value for metadata search
+     *
+     * @return Classification[]
+     */
+    public function getClassificationsByParameters(string $query = '', array $attributes = [], string $value = ''): array
+    {
+        $query = new Query('./mods:classification', $query, $attributes, $value);
+        return $this->getClassificationElements($query->getXPath());
     }
 
     /**
@@ -92,5 +106,25 @@ trait ClassificationReader
             return $elements[$count - 1];
         }
         return null;
+    }
+
+    /**
+     * Get the array of the <classification> elements.
+     * @see https://www.loc.gov/standards/mods/userguide/classification.html
+     *
+     * @access public
+     *
+     * @param string $xpath The XPath query for metadata search
+     *
+     * @return Classification[]
+     */
+    private function getClassificationElements(string $xpath): array
+    {
+        $classifications = [];
+        $values = $this->getValues($xpath);
+        foreach ($values as $value) {
+            $classifications[] = new Classification($value);
+        }
+        return $classifications;
     }
 }

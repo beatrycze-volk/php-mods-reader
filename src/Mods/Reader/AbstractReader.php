@@ -34,12 +34,7 @@ trait AbstractReader
      */
     public function getAbstract(string $query = ''): ?AbstractElement
     {
-        $xpath = './mods:abstract' . $query;
-        $element = new Element($this->xml, $xpath);
-        if ($element->exists()) {
-            return new AbstractElement($element->getFirstValue());
-        }
-        return null;
+        return $this->getAbstractElement('./mods:abstract' . $query);
     }
 
     /**
@@ -57,7 +52,22 @@ trait AbstractReader
     public function getAbstractByParameters(string $query = '', array $attributes = [], string $value = ''): ?AbstractElement
     {
         $query = new Query('./mods:abstract', $query, $attributes, $value);
-        $element = new Element($this->xml, $query->getXPath());
+        return $this->getAbstractElement($query->getXPath());
+    }
+
+    /**
+     * Get the value of the <abstract> element by given XPath.
+     * @see https://www.loc.gov/standards/mods/userguide/abstract.html
+     *
+     * @access private
+     *
+     * @param string $xpath The XPath query for metadata search
+     *
+     * @return ?AbstractElement
+     */
+    private function getAbstractElement(string $xpath): ?AbstractElement
+    {
+        $element = new Element($this->xml, $xpath);
         if ($element->exists()) {
             return new AbstractElement($element->getFirstValue());
         }
